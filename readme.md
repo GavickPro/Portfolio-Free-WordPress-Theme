@@ -16,23 +16,28 @@ All images used in demo comes from unsplash.com and littlevisuals.co and are rel
 
 Full list of used images:
 
-[http://www.pexels.com/photo/1223/](http://www.pexels.com/photo/1223/)
-[http://www.pexels.com/photo/1200/](http://www.pexels.com/photo/1200/)
-[http://www.pexels.com/photo/1518/](http://www.pexels.com/photo/1518/)
-[http://www.pexels.com/photo/1490/](http://www.pexels.com/photo/1490/)
-[http://www.pexels.com/photo/1465/](http://www.pexels.com/photo/1465/)
-[http://www.pexels.com/photo/890/](http://www.pexels.com/photo/890/)
-[http://www.pexels.com/photo/1437/](http://www.pexels.com/photo/1437/)
-[http://www.pexels.com/photo/1302/](http://www.pexels.com/photo/1302/)
-[http://www.pexels.com/photo/317/](http://www.pexels.com/photo/317/)
-[http://www.pexels.com/photo/271/](http://www.pexels.com/photo/271/)
-[http://www.pexels.com/photo/1838/](http://www.pexels.com/photo/1838/)
+* [http://www.pexels.com/photo/1223/](http://www.pexels.com/photo/1223/)
+* [http://www.pexels.com/photo/1200/](http://www.pexels.com/photo/1200/)
+* [http://www.pexels.com/photo/1518/](http://www.pexels.com/photo/1518/)
+* [http://www.pexels.com/photo/1490/](http://www.pexels.com/photo/1490/)
+* [http://www.pexels.com/photo/1465/](http://www.pexels.com/photo/1465/)
+* [http://www.pexels.com/photo/890/](http://www.pexels.com/photo/890/)
+* [http://www.pexels.com/photo/1437/](http://www.pexels.com/photo/1437/)
+* [http://www.pexels.com/photo/1302/](http://www.pexels.com/photo/1302/)
+* [http://www.pexels.com/photo/317/](http://www.pexels.com/photo/317/)
+* [http://www.pexels.com/photo/271/](http://www.pexels.com/photo/271/)
+* [http://www.pexels.com/photo/1838/](http://www.pexels.com/photo/1838/)
 
 ## Installation
 
 1. Upload the **portfolio** folder to the **/wp-content/themes/** directory
 2. Activate the **Portfolio** theme through the **Themes** menu in WordPress
 3. See **Appearance -> Customize** to change theme options or click the **Customize** button over the theme thumbnails in the **Appearance -> Themes** menu in WordPress
+
+## Support and Contribute
+
+* Check out the Portfolio theme documentation: [Portfolio documentation](http://www.gavick.com/documentation/wordpress-themes/wordpress-themes-configuration/portfolio-wordpress-theme-configuration/)
+* Check out the Github repo: [Portfolio Github repository](https://github.com/GavickPro/Portfolio-Free-WordPress-Theme/) to contribute or report issues
 
 ## Features
 
