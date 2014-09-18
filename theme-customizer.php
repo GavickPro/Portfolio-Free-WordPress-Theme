@@ -45,7 +45,7 @@ if ( isset( $wp_customize ) ) {
 		$wp_customize->add_setting(
 		    'portfolio_google_font',
 		    array(
-		        'default'   => '//fonts.googleapis.com/css?family=Cookie',
+		        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:700',
 		        'capability' => 'edit_theme_options'
 		    )
 		);
@@ -61,7 +61,7 @@ if ( isset( $wp_customize ) ) {
 		$wp_customize->add_setting(
 		    'portfolio_body_google_font',
 		    array(
-		        'default'   => '//fonts.googleapis.com/css?family=Raleway:300,400,700',
+		        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:400',
 		        'capability' => 'edit_theme_options'
 		    )
 		);
@@ -205,12 +205,12 @@ if ( isset( $wp_customize ) ) {
 
 // Add CSS styles generated from GK Cusotmizer settings
 function portfolio_customizer_css() {
-	$google = esc_attr(get_theme_mod('portfolio_google_font', '//fonts.googleapis.com/css?family=Cookie'));
+	$google = esc_attr(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'));
 	$fname = array();
 	preg_match('@family=(.+)$@is', $google, $fname);
 	$font_family = "'" . str_replace('+', ' ', preg_replace('@:.+@', '', preg_replace('@&.+@', '', $fname[1]))) . "'";
 	
-	$body_google = esc_attr(get_theme_mod('portfolio_body_google_font', '//fonts.googleapis.com/css?family=Raleway:300,400,700'));
+	$body_google = esc_attr(get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400'));
 	$body_fname = array();
 	preg_match('@family=(.+)$@is', $body_google, $body_fname);
 	$body_font_family = "'" . str_replace('+', ' ', preg_replace('@:.+@', '', preg_replace('@&.+@', '', $body_fname[1]))) . "'";
