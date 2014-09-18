@@ -4,6 +4,10 @@ Portfolio WordPress Theme, Copyright (c) 2014 Gavick.com
 Portfolio Wordpress Theme is distributed under the GNU GPL license 2.0
 http://www.gnu.org/licenses/gpl-2.0.html
 
+## Description
+
+If you’re a photographer, designer or creative blogger, you know how much of an impact strong visuals can have. It’s not enough to just write about your skills, or talk about what works in design; it has to be seen to be understood. With the clean, elegant design offered by this free Portfolio WordPress theme that puts all the emphasis on your creative work, you can craft an alluring, attractive and relaxed website that echoes the qualities that you put into your writing and images. Reveal and hover animations provide a dynamic backdrop without intrusion, and the dialed-back layout keeps attention focused on your content. Provide your blog or portfolio site with the perfect foundation with Porfolio...
+
 ## Used resources
 
 The following resources have been used:
