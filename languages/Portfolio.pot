@@ -1,0 +1,271 @@
+# Portfolio
+# Copyright (C) 2014 GavickPro
+# This file is distributed under the same license as the PACKAGE package.
+# GavickPro <info@gavick.com>, 2014.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: 1.0.0\n"
+        "Report-Msgid-Bugs-To: \n"
+        "POT-Creation-Date: 2014-09-15 15:12+0200\n"
+        "PO-Revision-Date: 2014-09-18 12:12+0200\n"
+        "Last-Translator: Tomasz Dziuda <dziudek@gavick.com>\n"
+        "Language-Team: LANGUAGE <LL@li.org>\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=CHARSET\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: comments.php:30
+#, php-format
+msgid   "%1$s Comments"
+msgstr  ""
+
+#: comments.php:55
+msgid   "&larr; Older Comments"
+msgstr  ""
+
+#: content-meta.php:27
+msgid   ", "
+msgstr  ""
+
+#: comments.php:26
+msgid   "1 Comment"
+msgstr  ""
+
+#: theme-customizer.php:175
+msgid   "2 Columns"
+msgstr  ""
+
+#: comments.php:28
+msgid   "2 Comments"
+msgstr  ""
+
+#: theme-customizer.php:174
+msgid   "3 Columns"
+msgstr  ""
+
+#: theme-customizer.php:173
+msgid   "4 Column"
+msgstr  ""
+
+#: image.php:36
+msgid   "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr  ""
+
+#: author.php:17
+#, php-format
+msgid   "All posts by %s"
+msgstr  ""
+
+#: theme-customizer.php:170
+msgid   "Amount of article columns"
+msgstr  ""
+
+#: functions.php:274
+msgid   "Appears at the bottom of the website."
+msgstr  ""
+
+#: archive.php:23
+msgid   "Blog Archives"
+msgstr  ""
+
+#: theme-customizer.php:140
+msgid   "Body Font"
+msgstr  ""
+
+#: functions.php:272
+msgid   "Bottom widget area"
+msgstr  ""
+
+#: category.php:14
+#, php-format
+msgid   "Category Archives: %s"
+msgstr  ""
+
+#: comments.php:54
+msgid   "Comment navigation"
+msgstr  ""
+
+#: comments.php:61
+msgid   "Comments are closed."
+msgstr  ""
+
+#: archive.php:17
+#, php-format
+msgid   "Daily Archives: %s"
+msgstr  ""
+
+#: theme-customizer.php:184
+msgid   "Date format"
+msgstr  ""
+
+#: theme-customizer.php:187
+msgid   "Default theme format"
+msgstr  ""
+
+#: content-meta.php:34 comments-template.php:30 comments-template.php:65
+#: page.php:32
+msgid   "Edit"
+msgstr  ""
+
+#: theme-customizer.php:197
+msgid   "Enable word-break"
+msgstr  ""
+
+#: theme-customizer.php:14
+msgid   "Font options"
+msgstr  ""
+
+#: theme-customizer.php:131
+msgid   "Google Font URL for Header"
+msgstr  ""
+
+#: theme-customizer.php:161
+msgid   "Google Font URL for the Body"
+msgstr  ""
+
+#: theme-customizer.php:110
+msgid   "Header Font"
+msgstr  ""
+
+#: 404.php:21
+msgid   "It looks like nothing was found at this location. Maybe try a search?"
+msgstr  ""
+
+#: content-none.php:23
+msgid   "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+        "searching can help."
+msgstr  ""
+
+#: theme-customizer.php:22
+msgid   "Layout & Features"
+msgstr  ""
+
+#: comments.php:68
+msgid   "Leave a Reply"
+msgstr  ""
+
+#: archive.php:19
+#, php-format
+msgid   "Monthly Archives: %s"
+msgstr  ""
+
+#: functions.php:87
+msgid   "Navigation Menu"
+msgstr  ""
+
+#: comments.php:56
+msgid   "Newer Comments &rarr;"
+msgstr  ""
+
+#: functions.php:312
+msgid   "Newer posts"
+msgstr  ""
+
+#: image.php:37
+msgid   "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr  ""
+
+#: 404.php:15
+msgid   "Not Found"
+msgstr  ""
+
+#: content-none.php:8
+msgid   "Nothing Found"
+msgstr  ""
+
+#: functions.php:306
+msgid   "Older posts"
+msgstr  ""
+
+#: functions.php:255
+#, php-format
+msgid   "Page %s"
+msgstr  ""
+
+#: image.php:31 content-video.php:31 content-archive.php:30 page.php:28
+#: content-gallery.php:22 content-quote.php:16 content-link.php:16
+#: content.php:23 content-image.php:22
+msgid   "Pages:"
+msgstr  ""
+
+#: comments-template.php:28
+msgid   "Pingback:"
+msgstr  ""
+
+#: comments-template.php:36
+msgid   "Post author"
+msgstr  ""
+
+#: content-meta.php:29
+msgid   "Posted in "
+msgstr  ""
+
+#: theme-customizer.php:99
+msgid   "Primary Color"
+msgstr  ""
+
+#: content-video.php:21 content-video.php:26 content-video.php:28
+#: content-archive.php:29 content-gallery.php:17 content-gallery.php:21
+#: content-quote.php:15 content-link.php:15 content.php:18 content.php:22
+#: content-image.php:17 content-image.php:21
+msgid   "Read more"
+msgstr  ""
+
+#: content-none.php:14
+#, php-format
+msgid   "Ready to publish your first post? <a href=\"%1$s\">Get started here</"
+        "a>."
+msgstr  ""
+
+#: search.php:13
+#, php-format
+msgid   "Search Results for: %s"
+msgstr  ""
+
+#: functions.php:428
+msgid   "Share:"
+msgstr  ""
+
+#: functions.php:88
+msgid   "Social Menu"
+msgstr  ""
+
+#: content-none.php:18
+msgid   "Sorry, but nothing matched your search terms. Please try again with "
+        "different keywords."
+msgstr  ""
+
+#: tag.php:13
+#, php-format
+msgid   "Tag Archives: %s"
+msgstr  ""
+
+#: 404.php:20
+msgid   "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr  ""
+
+#: comments.php:13
+msgid   "This post is password protected. Enter the password to view any "
+        "comments."
+msgstr  ""
+
+#: theme-customizer.php:188
+msgid   "WordPress Date Format"
+msgstr  ""
+
+#: archive.php:21
+#, php-format
+msgid   "Yearly Archives: %s"
+msgstr  ""
+
+#: header.php:22
+msgid   "You're using an unsupported version of Internet Explorer. Please <a "
+        "href=\"http://windows.microsoft.com/en-us/internet-explorer/products/"
+        "ie/home\">upgrade your browser</a> for the best user experience on "
+        "our site. Thank you."
+msgstr  ""
+
+#: comments-template.php:56
+msgid   "Your comment is awaiting moderation."
+msgstr  ""

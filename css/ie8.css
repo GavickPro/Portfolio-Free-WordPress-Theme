@@ -1,0 +1,88 @@
+/**
+ *
+ * -------------------------------------------
+ * IE code fixes
+ * -------------------------------------------
+ *
+ **/
+
+/*
+ *
+ * 14. IE
+ *
+ *
+------------------------------------ */
+
+/* 14.1. IE8
+==================================== */
+#ie-toolbar {   
+	background: #ffffdb;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10000001;
+	width: 100%;
+}
+#ie-toolbar div { 
+	margin: 0 auto;
+	padding: 12px 0;  
+	width: 980px;
+}
+#ie-toolbar a {
+	text-decoration: underline;
+}
+
+.author-avatar img,
+#comments li article > aside img,
+.gk-nsp-art .gk-nsp-image,
+ul.products li.product > a > img {
+	max-width: none!important;
+	width: auto!important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="www"],
+input[type="tel"] {
+	line-height: 1.2!important;
+	padding-top: 8px!important;
+	padding-bottom: 8px!important;
+}
+
+.gk-page-wrap,
+#gk-head,
+#gk-top-bar {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#gk-footer,
+.widget-area {
+	padding-left: 20px!important;
+	padding-right: 20px!important;
+}
+
+.ie8clear {
+	clear: both;
+}
+
+#gk-mainbody article {
+	overflow: hidden;
+}
+
+article header h1,
+article header h2 {
+	clear: both;
+}
+
+#gk-menu-wrap {
+	border-bottom: 1px solid #eee;
+}
+
+/* image logo fix */
+.imageLogo img {
+	max-width: auto!important;
+	width: auto!important;
+}
