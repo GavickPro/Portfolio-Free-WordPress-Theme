@@ -30,7 +30,8 @@ if ( isset( $wp_customize ) ) {
 	    	array( 
 	    		'default' => '#5cc1a9', 
 	    		'capability' => 'edit_theme_options',
-	    		'transport' => 'postMessage'
+	    		'transport' => 'postMessage',
+	    		'sanitize_callback' => 'sanitize_hex_color'
 	    	)
 	    );
 	    
@@ -38,7 +39,8 @@ if ( isset( $wp_customize ) ) {
 			'portfolio_font',
 			array(
 			    'default'   => 'google',
-			    'capability' => 'edit_theme_options' 
+			    'capability' => 'edit_theme_options',
+			    'sanitize_callback' => 'portfolio_sanitize_font'
 			)
 		);
 		
@@ -46,7 +48,8 @@ if ( isset( $wp_customize ) ) {
 		    'portfolio_google_font',
 		    array(
 		        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:700',
-		        'capability' => 'edit_theme_options'
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'esc_url_raw'
 		    )
 		);
 		
@@ -54,15 +57,17 @@ if ( isset( $wp_customize ) ) {
 			'portfolio_body_font',
 			array(
 			    'default'   => 'google',
-			    'capability' => 'edit_theme_options'
-				)
-			);
+			    'capability' => 'edit_theme_options',
+			    'sanitize_callback' => 'portfolio_sanitize_font'
+			)
+		);
 			
 		$wp_customize->add_setting(
 		    'portfolio_body_google_font',
 		    array(
 		        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:400',
-		        'capability' => 'edit_theme_options'
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'esc_url_raw'
 		    )
 		);
 		
@@ -70,7 +75,8 @@ if ( isset( $wp_customize ) ) {
 			'portfolio_article_column',
 			array( 
 				'default'   => '4',
-				'capability' => 'edit_theme_options' 
+				'capability' => 'edit_theme_options',
+				'sanitize_callback' => 'portfolio_sanitize_article_column'
 			)
 		);
 		
@@ -78,7 +84,8 @@ if ( isset( $wp_customize ) ) {
 			'portfolio_date_format',
 			array( 
 				'default'   => 'default',
-				'capability' => 'edit_theme_options' 
+				'capability' => 'edit_theme_options',
+				'sanitize_callback' => 'portfolio_sanitize_date_format'
 			)
 		);
 		
@@ -201,6 +208,45 @@ if ( isset( $wp_customize ) ) {
 	}
 	
 	add_action( 'customize_register', 'portfolio_init_customizer' );
+}
+
+/*
+ * Sanitization functions
+ */
+
+function portfolio_sanitize_article_column($value) {
+	if(in_array($value, array('1', '2', '3', '4'))) {
+		return $value;
+	}
+	return null;	
+}
+
+function portfolio_sanitize_font($value) {
+	$fonts = array(
+		'google', 
+		'verdana', 
+		'georgia', 
+		'arial', 
+		'impact', 
+		'tahoma', 
+		'times',
+		'comic sans ms',
+		'courier new',
+		'helvetica'
+	);
+	
+	if(in_array($value, $fonts)) {
+		return $value;
+	}
+	
+	return null;
+}
+
+function portfolio_sanitize_date_format($value) {
+	if($value === 'default' || $value === 'wordpress') {
+		return $value;
+	}
+	return null;
 }
 
 // Add CSS styles generated from GK Cusotmizer settings
