@@ -24,7 +24,7 @@
 		<div id="gk-copyrights">
 			<?php do_action('portfolio_credits'); ?>
 			
-			<p class="copyright">Free WordPress Theme designed by <a href="https://www.gavick.com/wordpress-themes.html">GavickPro</a></p>
+			<p class="copyright">Free WordPress Theme designed by <a href="https://www.gavick.com/wordpress-themes.html" rel="nofollow">GavickPro</a></p>
 			<p class="poweredby">Proudly published with <a href="http://wordpress.org/">WordPress</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- end of #gk-footer -->
