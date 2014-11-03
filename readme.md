@@ -63,6 +63,13 @@ Full list of used images:
 
 ## Changelog
 
+### 1.1.0 - November 3, 2014
+
+* Added support for logo image
+* Added sanitization for the Theme Customizer options
+* Added hiding effect for the Google Fonts URL field when other font type is selected 
+* Small CSS and code improvements
+
 ### 1.0.0 - September 18, 2014
 
 * Initial release
