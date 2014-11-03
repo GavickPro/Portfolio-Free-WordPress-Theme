@@ -23,10 +23,13 @@
 	<![endif]-->
 		<header id="masthead" class="site-header" role="banner">
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-				
-				<?php if(get_bloginfo('description') != '') : ?>
-				<h2 class="site-description"><?php bloginfo('description'); ?></h2>
+				<?php if(get_theme_mod('portfolio_logo', '') !== '') : ?>
+					<img src="<?php echo get_theme_mod('portfolio_logo', ''); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+				<?php else: ?>
+					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<?php if(get_bloginfo('description') != '') : ?>
+					<h2 class="site-description"><?php bloginfo('description'); ?></h2>
+					<?php endif; ?>
 				<?php endif; ?>
 			</a>
 		</header><!-- #masthead -->

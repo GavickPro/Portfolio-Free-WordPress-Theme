@@ -24,6 +24,15 @@ if ( isset( $wp_customize ) ) {
 	    );
 	    
 	    // Add new settings
+	    $wp_customize->add_setting(
+	    	'portfolio_logo',
+	    	array(
+	    		'default' => '',
+	    		'capability' => 'edit_theme_options',
+	    		'sanitize_callback' => 'esc_url_raw'
+	    	)
+	    );
+	    
 	    $wp_customize->add_setting( 
 	    	'portfolio_primary_color', 
 	    	array( 
@@ -98,6 +107,18 @@ if ( isset( $wp_customize ) ) {
 		);
 		
 		// Add control for the settings
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control( 
+				$wp_customize, 
+				'portfolio_logo', 
+				array(
+					'label'      => __('Logo image', 'portfolio'),
+					'section'    => 'title_tagline',
+					'settings'   => 'portfolio_logo'
+				) 
+			)
+		);
+		
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize, 
