@@ -5,8 +5,7 @@ global $wp_customize;
 if ( isset( $wp_customize ) ) {
 	
 	/* Add additional options to Theme Customizer */
-	function portfolio_init_customizer( $wp_customize ) {
-		
+	function portfolio_init_customizer( $wp_customize ) {		
 		// Add new settings sections
 	    $wp_customize->add_section(
 	    'portfolio_font_options',
@@ -56,9 +55,9 @@ if ( isset( $wp_customize ) ) {
 		$wp_customize->add_setting(
 			'portfolio_body_font',
 			array(
-			    'default'   => 'google',
-			    'capability' => 'edit_theme_options',
-			    'sanitize_callback' => 'portfolio_sanitize_font'
+		    	'default'   => 'google',
+		    	'capability' => 'edit_theme_options',
+		    	'sanitize_callback' => 'portfolio_sanitize_font'
 			)
 		);
 			
@@ -93,7 +92,8 @@ if ( isset( $wp_customize ) ) {
 		    'portfolio_word_break',
 		    array(
 		        'default'   => '0',
-		        'capability' => 'edit_theme_options'
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'sanitize_text_field'
 		    )
 		);
 		
@@ -136,7 +136,8 @@ if ( isset( $wp_customize ) ) {
 		    array(
 		        'section'  => 'portfolio_font_options',
 		        'label'    => __('Google Font URL for Header', 'portfolio'),
-		        'type'     => 'text'
+		        'type'     => 'text',
+		        'active_callback' => 'portfolio_font_url_field'
 	    	)
 		);
 			
@@ -166,7 +167,8 @@ if ( isset( $wp_customize ) ) {
 		    array(
 		        'section'  => 'portfolio_font_options',
 		        'label'    => __('Google Font URL for the Body', 'portfolio'),
-		        'type'     => 'text'
+		        'type'     => 'text',
+		        'active_callback' => 'portfolio_body_font_url_field'
 	    	)
 		);
 		
@@ -211,13 +213,32 @@ if ( isset( $wp_customize ) ) {
 }
 
 /*
+ * Context functions
+ */
+ 
+function portfolio_font_url_field($control) {
+	$option = $control->manager->get_setting('portfolio_font');
+	return $option->value() == 'google';
+}
+
+function portfolio_body_font_url_field($control) {
+	$option = $control->manager->get_setting('portfolio_body_font');
+	return $option->value() == 'google';
+}
+
+/*
  * Sanitization functions
  */
-
 function portfolio_sanitize_article_column($value) {
-	if(in_array($value, array('1', '2', '3', '4'))) {
+	if(
+		$value === '1' || 
+		$value === '2' || 
+		$value === '3' ||
+		$value === '4'
+	) {
 		return $value;
 	}
+	
 	return null;	
 }
 
@@ -391,7 +412,7 @@ function portfolio_customize_preview() {
     	    value.bind( function( to ) {
     	    	to = to ? to : '#5cc1a9';
     	    	// set colors:
-    	    	var new_css = 'a, a.inverse:active, a.inverse:focus, a.inverse:hover, .entry-title a:hover, button, input[type="submit"], input[type="button"], input[type="reset"], .entry-summary .readon, .comment-author .fn, .comment-author .url, .comment-reply-link, .comment-reply-login, #content .tags-links a:active, #content .tags-links a:focus, #content .tags-links a:hover, .nav-menu li a:active, .nav-menu li a:focus, .nav-menu li a:hover, ul.nav-menu ul a:hover, .nav-menu ul ul a:hover, .gk-social-buttons a:hover:before, .format-gallery .entry-content .page-links a:hover, .format-audio .entry-content .page-links a:hover, .format-status .entry-content .page-links a:hover, .format-video .entry-content .page-links a:hover, .format-chat .entry-content .page-links a:hover, .format-quote .entry-content .page-links a:hover, .page-links a:hover, .paging-navigation a:active, .paging-navigation a:focus, .paging-navigation a:hover, .comment-meta a:hover, .social-menu li:hover:before { color: '+to+'; } button, input[type="submit"], input[type="button"], input[type="reset"], .entry-summary .readon { border: 1px solid '+to+'; } .nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a { border-color: '+to+'; color: '+to+'; } .format-status .entry-content .page-links a, .format-gallery .entry-content .page-links a, .format-chat .entry-content .page-links a, .format-quote .entry-content .page-links a, .page-links a { background-color: '+to+'; border-color: '+to+'; } .hentry .mejs-controls .mejs-time-rail .mejs-time-current, .comment-post-author {background: '+to+';} .comments-title > span, .comment-reply-title > span { border-bottom-color: '+to+'; }';
+    	    	var new_css = 'a, a.inverse:active, a.inverse:focus, a.inverse:hover, .entry-title a:hover, button, input[type="submit"], input[type="button"], input[type="reset"], .entry-summary .readon, .comment-author .fn, .comment-author .url, .comment-reply-link, .comment-reply-login, #content .tags-links a:active, #content .tags-links a:focus, #content .tags-links a:hover, .nav-menu li a:active, .nav-menu li a:focus, .nav-menu li a:hover, ul.nav-menu ul a:hover, .nav-menu ul ul a:hover, .gk-social-buttons a:hover:before, .format-gallery .entry-content .page-links a:hover, .format-audio .entry-content .page-links a:hover, .format-status .entry-content .page-links a:hover, .format-video .entry-content .page-links a:hover, .format-chat .entry-content .page-links a:hover, .format-quote .entry-content .page-links a:hover, .page-links a:hover, .paging-navigation a:active, .paging-navigation a:focus, .paging-navigation a:hover, .comment-meta a:hover, .social-menu li:hover:before { color: '+to+'; } button, input[type="submit"], input[type="button"], input[type="reset"], .entry-summary .readon { border: 1px solid '+to+'; } .nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a { border-color: '+to+'; color: '+to+'; } .format-status .entry-content .page-links a, .format-gallery .entry-content .page-links a, .format-chat .entry-content .page-links a, .format-quote .entry-content .page-links a, .page-links a { background-color: '+to+'; border-color: '+to+'; } .hentry .mejs-controls .mejs-time-rail .mejs-time-current, .comment-post-author {background: '+to+';} .comment-reply-title {border-bottom: 2px solid '+to+';}';
     	    	
     	    	if($(document).find('#portfolio-new-css-1').length) {
     	    		$(document).find('#portfolio-new-css-1').remove();
