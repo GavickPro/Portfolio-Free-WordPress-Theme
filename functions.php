@@ -306,7 +306,7 @@ if (!function_exists('portfolio_paging_nav')) {
 						<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'portfolio' ) ); ?></div>
 					<?php endif; ?>
 								
-					<span class="pagination-item">Page <?php echo $paged ?> of <?php echo $wp_query->max_num_pages ?></span>			
+					<span class="pagination-item"><?php _e( 'Page', 'portfolio' )?> <?php echo $paged ?> <?php _e( 'of', 'portfolio' )?> <?php echo $wp_query->max_num_pages ?></span>			
 		
 					<?php if (get_previous_posts_link()) : ?>
 						<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'portfolio' ) ); ?></div>

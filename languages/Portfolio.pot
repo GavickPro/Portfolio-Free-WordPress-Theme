@@ -8,7 +8,7 @@ msgid   ""
 msgstr  "Project-Id-Version: 1.0.0\n"
         "Report-Msgid-Bugs-To: \n"
         "POT-Creation-Date: 2014-09-15 15:12+0200\n"
-        "PO-Revision-Date: 2014-09-18 12:12+0200\n"
+        "PO-Revision-Date: 2014-10-04 12:12+0200\n"
         "Last-Translator: Tomasz Dziuda <dziudek@gavick.com>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
         "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr  ""
 msgid   "1 Comment"
 msgstr  ""
 
-#: theme-customizer.php:175
+#: theme-customizer.php:205
 msgid   "2 Columns"
 msgstr  ""
 
@@ -40,11 +40,11 @@ msgstr  ""
 msgid   "2 Comments"
 msgstr  ""
 
-#: theme-customizer.php:174
+#: theme-customizer.php:204
 msgid   "3 Columns"
 msgstr  ""
 
-#: theme-customizer.php:173
+#: theme-customizer.php:203
 msgid   "4 Column"
 msgstr  ""
 
@@ -57,7 +57,7 @@ msgstr  ""
 msgid   "All posts by %s"
 msgstr  ""
 
-#: theme-customizer.php:170
+#: theme-customizer.php:200
 msgid   "Amount of article columns"
 msgstr  ""
 
@@ -69,7 +69,7 @@ msgstr  ""
 msgid   "Blog Archives"
 msgstr  ""
 
-#: theme-customizer.php:140
+#: theme-customizer.php:169
 msgid   "Body Font"
 msgstr  ""
 
@@ -95,11 +95,11 @@ msgstr  ""
 msgid   "Daily Archives: %s"
 msgstr  ""
 
-#: theme-customizer.php:184
+#: theme-customizer.php:214
 msgid   "Date format"
 msgstr  ""
 
-#: theme-customizer.php:187
+#: theme-customizer.php:217
 msgid   "Default theme format"
 msgstr  ""
 
@@ -108,23 +108,27 @@ msgstr  ""
 msgid   "Edit"
 msgstr  ""
 
-#: theme-customizer.php:197
+#: theme-customizer.php:227
 msgid   "Enable word-break"
 msgstr  ""
 
-#: theme-customizer.php:14
+#: theme-customizer.php:13
 msgid   "Font options"
 msgstr  ""
 
-#: theme-customizer.php:131
+#: footer.php:27
+msgid   "Free WordPress Theme designed by "
+msgstr  ""
+
+#: theme-customizer.php:159
 msgid   "Google Font URL for Header"
 msgstr  ""
 
-#: theme-customizer.php:161
+#: theme-customizer.php:190
 msgid   "Google Font URL for the Body"
 msgstr  ""
 
-#: theme-customizer.php:110
+#: theme-customizer.php:138
 msgid   "Header Font"
 msgstr  ""
 
@@ -137,12 +141,16 @@ msgid   "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
         "searching can help."
 msgstr  ""
 
-#: theme-customizer.php:22
+#: theme-customizer.php:21
 msgid   "Layout & Features"
 msgstr  ""
 
 #: comments.php:68
 msgid   "Leave a Reply"
+msgstr  ""
+
+#: theme-customizer.php:115
+msgid   "Logo image"
 msgstr  ""
 
 #: archive.php:19
@@ -178,6 +186,10 @@ msgstr  ""
 msgid   "Older posts"
 msgstr  ""
 
+#: functions.php:309
+msgid   "Page"
+msgstr  ""
+
 #: functions.php:255
 #, php-format
 msgid   "Page %s"
@@ -201,8 +213,12 @@ msgstr  ""
 msgid   "Posted in "
 msgstr  ""
 
-#: theme-customizer.php:99
+#: theme-customizer.php:127
 msgid   "Primary Color"
+msgstr  ""
+
+#: footer.php:28
+msgid   "Proudly published with "
 msgstr  ""
 
 #: content-video.php:21 content-video.php:26 content-video.php:28
@@ -250,7 +266,7 @@ msgid   "This post is password protected. Enter the password to view any "
         "comments."
 msgstr  ""
 
-#: theme-customizer.php:188
+#: theme-customizer.php:218
 msgid   "WordPress Date Format"
 msgstr  ""
 
@@ -268,4 +284,8 @@ msgstr  ""
 
 #: comments-template.php:56
 msgid   "Your comment is awaiting moderation."
+msgstr  ""
+
+#: functions.php:309
+msgid   "of"
 msgstr  ""
