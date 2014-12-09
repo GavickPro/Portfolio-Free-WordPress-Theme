@@ -160,7 +160,7 @@ if(!function_exists('portfolio_add_editor_styles')) {
 	 * @return void
 	 */
 	function portfolio_add_editor_styles() {
-	    add_editor_style(array('editor.css', 'css/font.awesome.css', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700'));
+	    add_editor_style(array('editor.css', 'css/font.awesome.css', 'https://fonts.googleapis.com/css?family=Open+Sans'));
 	}
 }
 
