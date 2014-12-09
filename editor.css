@@ -2,9 +2,6 @@
 	CSS for the back-end editor
  */
 
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700');
-@import url('css/font.awesome.css');
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

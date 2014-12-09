@@ -63,6 +63,12 @@ Full list of used images:
 
 ## Changelog
 
+### 1.1.1 - December 9, 2014
+
+* Improved editor CSS loading
+* Improved translations
+* Small code improvements
+
 ### 1.1.0 - November 3, 2014
 
 * Added support for logo image
