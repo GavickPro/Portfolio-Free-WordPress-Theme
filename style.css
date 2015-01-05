@@ -544,7 +544,7 @@ img.wp-smiley,
 
 #content .tags-links > li {
 	color: #b5b5b5;
-	font-weight: 500;
+	font-weight: 700;
 	float: left;
 	list-style-type: none;
 	line-height: 69px;
@@ -881,7 +881,7 @@ ul.nav-menu li:hover > ul,
 
 #aside-menu li {
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 700;
 	padding: 3px 0;
 	text-transform: uppercase;
 }
@@ -1062,7 +1062,7 @@ ul.nav-menu li:hover > ul,
 	border-left: 4px solid #59c0ab;
 	background: #fdfbec;
 	font-size: 12px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 2;
 	margin: 30px 0;
 	padding: 15px 30px 15px 45px;
@@ -2182,7 +2182,7 @@ footer.entry-meta > .edit-link {
 	background: #f5f5f5;
 	color: #333;
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .widget_calendar td {
