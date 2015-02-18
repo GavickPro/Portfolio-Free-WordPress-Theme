@@ -202,8 +202,8 @@ if(!function_exists('portfolio_styles')) {
 		wp_enqueue_style('portfolio-normalize', get_template_directory_uri() . '/css/normalize.css', false);
 	
 		// Add Google font from the customizer
-		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', '//fonts.googleapis.com/css?family=Open+Sans:700'), false);
-		wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', '//fonts.googleapis.com/css?family=Open+Sans:400'), false);
+		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', '//fonts.googleapis.com/css?family=Cookie'), false);
+		wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', '//fonts.googleapis.com/css?family=Raleway:300,400,700'), false);
 		
 		// Font Awesome
 		wp_enqueue_style('portfolio-font-awesome', get_template_directory_uri() . '/css/font.awesome.css', false, '4.0.3');
@@ -423,7 +423,7 @@ if(!function_exists('portfolio_social_button')) {
 		$permalink = get_permalink($post->ID);
 		$title = get_the_title();
 		// add share button only on posts pages
-		if(!is_feed() && !is_home() && !is_page()) {
+		if(!is_feed() && !is_home() && !is_page() && get_theme_mod('portfolio_post_show_social', '1') == '1') {
 			$content = $content . '<div class="gk-social-buttons">
 			<span class="gk-social-label">'.__( 'Share:', 'portfolio' ).'</span>
 			<a class="gk-social-twitter" href="http://twitter.com/share?text='.urlencode($title).'&amp;url='.urlencode($permalink).'"

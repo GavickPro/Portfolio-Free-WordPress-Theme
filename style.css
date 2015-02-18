@@ -4,7 +4,7 @@ Theme URI: https://www.gavick.com/wordpress-themes/portfolio,174.html
 Description: If you’re a photographer, designer or creative blogger, you know how much of an impact strong visuals can have. It’s not enough to just write about your skills, or talk about what works in design; it has to be seen to be understood. With the clean, elegant design offered by this free Portfolio WordPress theme that puts all the emphasis on your creative work, you can craft an alluring, attractive and relaxed website that echoes the qualities that you put into your writing and images. Reveal and hover animations provide a dynamic backdrop without intrusion, and the dialed-back layout keeps attention focused on your content. Provide your blog or portfolio site with the perfect foundation with Porfolio...
 License: GNU GPL v.2.0
 License URI: LICENSE.txt
-Version: 1.1.1
+Version: 1.2.0
 Author: GavickPro
 Author URI: http://www.gavick.com
 Tags: green, gray, white, one-column, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
@@ -449,7 +449,6 @@ img.wp-smiley,
 	box-shadow: 0 0 13px rgba(0, 0, 0, .07);
 	margin: 0 auto;
 	padding: 0 0 30px 0;
-	width: 700px;
 }
 
 .home #primary,
@@ -467,10 +466,6 @@ img.wp-smiley,
 	width: auto;	
 }
 
-.attachment #primary {
-	width: 700px;
-}
-
 #content > article > div {
 	background: #fff;
 	margin: 0;
@@ -483,6 +478,13 @@ img.wp-smiley,
 
 #content .post-meta {
 	padding: 0 72px 12px 72px;
+}
+
+.post-meta:first-child,
+.entry-content:first-child,
+.entry-header + .entry-content,
+.entry-header.no-title + .post-meta {
+	padding-top: 32px!important;
 }
 
 #content > article > aside a {
@@ -512,6 +514,10 @@ img.wp-smiley,
 #content .categories-links {
 	font-size: 12px;
 	padding: 0 10px;
+}
+
+#content .categories-links:first-child {
+	padding-left: 0;
 }
 
 #content .tags-links {
@@ -544,7 +550,7 @@ img.wp-smiley,
 
 #content .tags-links > li {
 	color: #b5b5b5;
-	font-weight: 700;
+	font-weight: 500;
 	float: left;
 	list-style-type: none;
 	line-height: 69px;
@@ -881,7 +887,7 @@ ul.nav-menu li:hover > ul,
 
 #aside-menu li {
 	font-size: 15px;
-	font-weight: 700;
+	font-weight: 600;
 	padding: 3px 0;
 	text-transform: uppercase;
 }
@@ -1003,6 +1009,11 @@ ul.nav-menu li:hover > ul,
 }
 
 .entry-header > img {
+	display: block;
+	margin: 0 auto;
+}
+
+.entry-header.full-width-image > img {
 	width: 100%;
 }
 
@@ -1018,6 +1029,40 @@ ul.nav-menu li:hover > ul,
 
 .entry-title.sticky {
 	position: relative;
+}
+
+.entry-header.sticky,
+.sticky .post-preview {
+	overflow: hidden;
+	position: relative;
+}
+
+.entry-header.sticky:before,
+.sticky .post-preview:before {
+	color: #fff;
+	content: "\f005";
+	font-family: FontAwesome;
+	font-size: 12px;
+	position: absolute;
+	right: 5px;
+	top: 2px;
+	z-index: 3;
+}
+
+.entry-header.sticky:after,
+.sticky .post-preview:after {
+	content: "";
+	height: 50px;
+	position: absolute;
+	right: -50px;
+	top: -25px;
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	-ms-transform: rotateZ(45deg);
+	-o-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+	width: 100px;
+	z-index: 2;
 }
 
 .entry-title a {
@@ -1062,7 +1107,7 @@ ul.nav-menu li:hover > ul,
 	border-left: 4px solid #59c0ab;
 	background: #fdfbec;
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 2;
 	margin: 30px 0;
 	padding: 15px 30px 15px 45px;
@@ -1522,7 +1567,6 @@ footer.entry-meta > .edit-link {
 	box-shadow: 0 0 13px rgba(0, 0, 0, .07);
 	margin: 42px auto;
 	padding: 32px 72px;
-	width: 700px;
 }
 
 .author-avatar .avatar {
@@ -1617,6 +1661,7 @@ footer.entry-meta > .edit-link {
 	transition: all .5s ease-out;
 }
 
+.no-animation > .article-helper,
 .article-helper.animated {
 	opacity: 1;
 	-webkit-transform: rotateY(0);
@@ -1776,7 +1821,6 @@ footer.entry-meta > .edit-link {
 	margin: 0 auto 12px;
 	padding: 0 72px 20px 72px;
 	height: auto;
-	width: 700px!important;
 	float: none;
 }
 
@@ -1809,7 +1853,6 @@ footer.entry-meta > .edit-link {
 
 #comments {
  	margin: 32px auto 50px auto;
- 	width: 700px;
 }
 #comments .no-password {
 	margin-top: 0;
@@ -2182,7 +2225,7 @@ footer.entry-meta > .edit-link {
 	background: #f5f5f5;
 	color: #333;
 	font-size: 12px;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .widget_calendar td {

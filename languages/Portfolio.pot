@@ -1,14 +1,14 @@
 # Portfolio
-# Copyright (C) 2014 GavickPro
+# Copyright (C) 2014-2015 GavickPro
 # This file is distributed under the same license as the PACKAGE package.
-# GavickPro <info@gavick.com>, 2014.
+# GavickPro <info@gavick.com>, 2014-2015.
 #
 #, fuzzy
 msgid   ""
-msgstr  "Project-Id-Version: 1.0.0\n"
+msgstr  "Project-Id-Version: 1.2.0\n"
         "Report-Msgid-Bugs-To: \n"
         "POT-Creation-Date: 2014-09-15 15:12+0200\n"
-        "PO-Revision-Date: 2014-10-04 12:12+0200\n"
+        "PO-Revision-Date: 2015-02-18 20:32+0200\n"
         "Last-Translator: Tomasz Dziuda <dziudek@gavick.com>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
         "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr  ""
 msgid   "&larr; Older Comments"
 msgstr  ""
 
-#: content-meta.php:27
+#: content-meta.php:35
 msgid   ", "
 msgstr  ""
 
@@ -32,7 +32,7 @@ msgstr  ""
 msgid   "1 Comment"
 msgstr  ""
 
-#: theme-customizer.php:205
+#: theme-customizer.php:295
 msgid   "2 Columns"
 msgstr  ""
 
@@ -40,11 +40,11 @@ msgstr  ""
 msgid   "2 Comments"
 msgstr  ""
 
-#: theme-customizer.php:204
+#: theme-customizer.php:294
 msgid   "3 Columns"
 msgstr  ""
 
-#: theme-customizer.php:203
+#: theme-customizer.php:293
 msgid   "4 Column"
 msgstr  ""
 
@@ -57,7 +57,7 @@ msgstr  ""
 msgid   "All posts by %s"
 msgstr  ""
 
-#: theme-customizer.php:200
+#: theme-customizer.php:290
 msgid   "Amount of article columns"
 msgstr  ""
 
@@ -69,7 +69,7 @@ msgstr  ""
 msgid   "Blog Archives"
 msgstr  ""
 
-#: theme-customizer.php:169
+#: theme-customizer.php:259
 msgid   "Body Font"
 msgstr  ""
 
@@ -90,25 +90,29 @@ msgstr  ""
 msgid   "Comments are closed."
 msgstr  ""
 
+#: theme-customizer.php:317
+msgid   "Content width"
+msgstr  ""
+
 #: archive.php:17
 #, php-format
 msgid   "Daily Archives: %s"
 msgstr  ""
 
-#: theme-customizer.php:214
+#: theme-customizer.php:304
 msgid   "Date format"
 msgstr  ""
 
-#: theme-customizer.php:217
+#: theme-customizer.php:307
 msgid   "Default theme format"
 msgstr  ""
 
-#: content-meta.php:34 comments-template.php:30 comments-template.php:65
+#: content-meta.php:43 comments-template.php:30 comments-template.php:65
 #: page.php:32
 msgid   "Edit"
 msgstr  ""
 
-#: theme-customizer.php:227
+#: theme-customizer.php:326
 msgid   "Enable word-break"
 msgstr  ""
 
@@ -120,15 +124,23 @@ msgstr  ""
 msgid   "Free WordPress Theme designed by "
 msgstr  ""
 
-#: theme-customizer.php:159
+#: theme-customizer.php:344
+msgid   "Frontpage items animation"
+msgstr  ""
+
+#: theme-customizer.php:335
+msgid   "Full-width images"
+msgstr  ""
+
+#: theme-customizer.php:249
 msgid   "Google Font URL for Header"
 msgstr  ""
 
-#: theme-customizer.php:190
+#: theme-customizer.php:280
 msgid   "Google Font URL for the Body"
 msgstr  ""
 
-#: theme-customizer.php:138
+#: theme-customizer.php:228
 msgid   "Header Font"
 msgstr  ""
 
@@ -149,7 +161,7 @@ msgstr  ""
 msgid   "Leave a Reply"
 msgstr  ""
 
-#: theme-customizer.php:115
+#: theme-customizer.php:205
 msgid   "Logo image"
 msgstr  ""
 
@@ -209,11 +221,15 @@ msgstr  ""
 msgid   "Post author"
 msgstr  ""
 
-#: content-meta.php:29
+#: theme-customizer.php:29
+msgid   "Post display"
+msgstr  ""
+
+#: content-meta.php:37
 msgid   "Posted in "
 msgstr  ""
 
-#: theme-customizer.php:127
+#: theme-customizer.php:217
 msgid   "Primary Color"
 msgstr  ""
 
@@ -243,6 +259,30 @@ msgstr  ""
 msgid   "Share:"
 msgstr  ""
 
+#: theme-customizer.php:398
+msgid   "Show author"
+msgstr  ""
+
+#: theme-customizer.php:371
+msgid   "Show category"
+msgstr  ""
+
+#: theme-customizer.php:362
+msgid   "Show date"
+msgstr  ""
+
+#: theme-customizer.php:389
+msgid   "Show social icons"
+msgstr  ""
+
+#: theme-customizer.php:380
+msgid   "Show tags"
+msgstr  ""
+
+#: theme-customizer.php:353
+msgid   "Show title"
+msgstr  ""
+
 #: functions.php:88
 msgid   "Social Menu"
 msgstr  ""
@@ -266,7 +306,7 @@ msgid   "This post is password protected. Enter the password to view any "
         "comments."
 msgstr  ""
 
-#: theme-customizer.php:218
+#: theme-customizer.php:308
 msgid   "WordPress Date Format"
 msgstr  ""
 

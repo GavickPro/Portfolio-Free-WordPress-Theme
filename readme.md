@@ -63,6 +63,14 @@ Full list of used images:
 
 ## Changelog
 
+### 1.2.0 - February 19, 2015
+
+* Added option to enable/disable frontpage animation
+* Added option to enable/disable post elements
+* Added option to specify content width
+* Added option to enable/disable full-width images
+* Improved sticky posts styling
+
 ### 1.1.1 - December 9, 2014
 
 * Improved editor CSS loading

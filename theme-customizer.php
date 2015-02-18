@@ -23,6 +23,15 @@ if ( isset( $wp_customize ) ) {
 	    	)
 	    );
 	    
+	    $wp_customize->add_section(
+	    'portfolio_post_options',
+	    array(
+	        'title'     => __('Post display', 'portfolio'),
+	        'priority'  => 400,
+	        'active_callback' => 'portfolio_is_singular'
+	    	)
+	    );
+	    
 	    // Add new settings
 	    $wp_customize->add_setting(
 	    	'portfolio_logo',
@@ -98,11 +107,92 @@ if ( isset( $wp_customize ) ) {
 		);
 		
 		$wp_customize->add_setting(
+		    'portfolio_content_width',
+		    array(
+		        'default'   => '700',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'intval'
+		    )
+		);
+		
+		$wp_customize->add_setting(
 		    'portfolio_word_break',
 		    array(
 		        'default'   => '0',
 		        'capability' => 'edit_theme_options',
-		        'sanitize_callback' => 'sanitize_text_field'
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_full_width_images',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_title',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_date',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_category',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_social',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_tags',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_post_show_author',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'portfolio_frontpage_animation',
+		    array(
+		        'default'   => '1',
+		        'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'portfolio_sanitize_checkbox'
 		    )
 		);
 		
@@ -221,10 +311,91 @@ if ( isset( $wp_customize ) ) {
 		);
 		
 		$wp_customize->add_control(
+		    'portfolio_content_width',
+		    array(
+		        'section'  => 'portfolio_layout_options',
+		        'label'    => __('Content width', 'portfolio'),
+		        'type'     => 'text'
+		    )
+		);
+		
+		$wp_customize->add_control(
             'portfolio_word_break',
             array(
                 'section'  => 'portfolio_layout_options',
-                'label'    => __('Enable word-break', 'perfetta'),
+                'label'    => __('Enable word-break', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_full_width_images',
+            array(
+                'section'  => 'portfolio_layout_options',
+                'label'    => __('Full-width images', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_frontpage_animation',
+            array(
+                'section'  => 'portfolio_layout_options',
+                'label'    => __('Frontpage items animation', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_title',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show title', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_date',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show date', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_category',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show category', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_tags',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show tags', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_social',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show social icons', 'portfolio'),
+                'type'     => 'checkbox'
+            )
+        );
+        
+        $wp_customize->add_control(
+            'portfolio_post_show_author',
+            array(
+                'section'  => 'portfolio_post_options',
+                'label'    => __('Show author', 'portfolio'),
                 'type'     => 'checkbox'
             )
         );
@@ -236,6 +407,10 @@ if ( isset( $wp_customize ) ) {
 /*
  * Context functions
  */
+ 
+function portfolio_is_singular($section) {
+	return is_singular();
+} 
  
 function portfolio_font_url_field($control) {
 	$option = $control->manager->get_setting('portfolio_font');
@@ -286,6 +461,13 @@ function portfolio_sanitize_date_format($value) {
 	return null;
 }
 
+function portfolio_sanitize_checkbox($value) {
+	if($value == '1' || $value == '0') {
+		return $value;
+	}
+	return null;
+}
+
 // Add CSS styles generated from GK Cusotmizer settings
 function portfolio_customizer_css() {
 	$google = esc_attr(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'));
@@ -316,6 +498,15 @@ function portfolio_customizer_css() {
     <style type="text/css">
     	body { font-family: <?php echo $body_portfolio_font; ?> }
         .site-title { font-family: <?php echo $portfolio_font; ?> }
+    
+    	#primary,
+    	#comments,
+    	.author-info,
+    	.attachment #primary,
+    	.site-content.archive #gk-search,
+    	.search-no-results .page-content {
+    		width: <?php echo get_theme_mod('portfolio_content_width', 700); ?>px;
+    	}
     
     	<?php if(get_theme_mod('portfolio_word_break', '0') == '1') : ?>
         body {
@@ -389,7 +580,9 @@ function portfolio_customizer_css() {
         	border-color: <?php echo $primary_color; ?>;
         }
         .hentry .mejs-controls .mejs-time-rail .mejs-time-current,
-        .comment-post-author {
+        .comment-post-author,
+        .sticky .post-preview:after,
+        .entry-header.sticky:after {
         	background: <?php echo $primary_color; ?>;
         }
         .comments-title > span,
