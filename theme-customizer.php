@@ -111,7 +111,7 @@ if ( isset( $wp_customize ) ) {
 		    array(
 		        'default'   => '700',
 		        'capability' => 'edit_theme_options',
-		        'sanitize_callback' => 'intval'
+		        'sanitize_callback' => 'portfolio_intval'
 		    )
 		);
 		
@@ -425,6 +425,10 @@ function portfolio_body_font_url_field($control) {
 /*
  * Sanitization functions
  */
+function portfolio_intval($value) {
+	return intval($value);
+} 
+ 
 function portfolio_sanitize_article_column($value) {
 	if(in_array($value, array('1', '2', '3', '4'))) {
 		return $value;
