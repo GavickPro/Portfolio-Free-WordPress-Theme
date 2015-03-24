@@ -44,6 +44,15 @@ function portfolio_init_customizer( $wp_customize ) {
     	)
     );
     
+    $wp_customize->add_setting(
+    	'portfolio_logo_autosize',
+    	array(
+    		'default' => '0',
+    		'capability' => 'edit_theme_options',
+    		'sanitize_callback' => 'portfolio_sanitize_checkbox'
+    	)
+    );
+    
     $wp_customize->add_setting( 
     	'portfolio_primary_color', 
     	array( 
@@ -218,6 +227,16 @@ function portfolio_init_customizer( $wp_customize ) {
 				'settings'   => 'portfolio_logo'
 			) 
 		)
+	);
+	
+	$wp_customize->add_control(
+	    'portfolio_logo_autosize',
+	    array(
+	        'label'    => __('Adjust header size to the logo image', 'portfolio'),
+	        'section'    => 'title_tagline',
+	        'type'     => 'checkbox',
+	        'active_callback' => 'portfolio_logo_config'
+	    )
 	);
 	
 	$wp_customize->add_control(

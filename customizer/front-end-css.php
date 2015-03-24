@@ -121,6 +121,17 @@ function portfolio_customizer_css() {
         .comment-reply-title > span {
         	border-bottom-color: <?php echo $primary_color; ?>;
         }
+        
+        <?php if(
+        	get_theme_mod('portfolio_logo', '') != '' && 
+        	get_theme_mod('portfolio_logo_autosize', '0') == '1'
+        ) : ?>
+        .site-header,
+        .home-link > img {
+        	height: auto;
+        	max-height: none;
+        }
+        <?php endif; ?>
     </style>
     <?php   
     
