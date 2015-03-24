@@ -136,6 +136,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_post_show_featured_image',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 	    'portfolio_post_show_title',
 	    array(
 	        'default'   => '1',
@@ -344,6 +353,15 @@ function portfolio_init_customizer( $wp_customize ) {
         array(
             'section'  => 'portfolio_layout_options',
             'label'    => __('Frontpage items animation', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_post_show_featured_image',
+        array(
+            'section'  => 'portfolio_post_options',
+            'label'    => __('Show featured image', 'portfolio'),
             'type'     => 'checkbox'
         )
     );
