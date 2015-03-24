@@ -204,7 +204,7 @@ if(!function_exists('portfolio_styles')) {
 		// Add Google font from the customizer
 		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'), false);
 		
-		if(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700') == get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400')) {
+		if(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700') != get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400')) {
 			wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400'), false);
 		}
 		
