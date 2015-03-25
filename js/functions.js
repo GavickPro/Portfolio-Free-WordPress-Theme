@@ -21,7 +21,6 @@
 		}
 		
 		jQuery('.article-helper.notloaded').each(function(i, wrapper) {
-			console.log(i);
             wrapper = jQuery(wrapper);
             var img = wrapper.find('header > img')[0];
 
