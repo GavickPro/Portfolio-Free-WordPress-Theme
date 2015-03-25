@@ -1027,18 +1027,21 @@ ul.nav-menu li:hover > ul,
 	word-break: normal;
 }
 
-.entry-title.sticky {
+.entry-title.sticky,
+.article-helper.sticky {
 	position: relative;
 }
 
 .entry-header.sticky,
-.sticky .post-preview {
+.sticky .post-preview,
+.article-helper.sticky {
 	overflow: hidden;
 	position: relative;
 }
 
 .entry-header.sticky:before,
-.sticky .post-preview:before {
+.sticky .post-preview:before,
+.article-helper.sticky:before {
 	color: #fff;
 	content: "\f005";
 	font-family: FontAwesome;
@@ -1050,7 +1053,8 @@ ul.nav-menu li:hover > ul,
 }
 
 .entry-header.sticky:after,
-.sticky .post-preview:after {
+.sticky .post-preview:after,
+.article-helper.sticky:after {
 	content: "";
 	height: 50px;
 	position: absolute;
@@ -1748,6 +1752,10 @@ footer.entry-meta > .edit-link {
 .article-helper .entry-title,
 .article-helper .entry-summary {
 	padding: 0;
+}
+
+.article-helper header.no-anim img {
+	opacity: 0;
 }
 
 .article-helper .entry-title {

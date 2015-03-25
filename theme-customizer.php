@@ -216,6 +216,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	    )
 	);
 	
+	$wp_customize->add_setting(
+	    'portfolio_show_excerpts',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+	    )
+	);
+	
 	// Add control for the settings
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control( 
@@ -372,6 +381,15 @@ function portfolio_init_customizer( $wp_customize ) {
         array(
             'section'  => 'portfolio_layout_options',
             'label'    => __('Frontpage items animation', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_show_excerpts',
+        array(
+            'section'  => 'portfolio_layout_options',
+            'label'    => __('Show excerpts on portfolio', 'portfolio'),
             'type'     => 'checkbox'
         )
     );
