@@ -10,27 +10,36 @@ require get_template_directory() . '/customizer/front-end-js.php';
 function portfolio_init_customizer( $wp_customize ) {		
 	// Add new settings sections
     $wp_customize->add_section(
-    'portfolio_font_options',
-    array(
-        'title'     => __('Font options', 'portfolio'),
-        'priority'  => 200
+	    'portfolio_font_options',
+	    array(
+	        'title'     => __('Font options', 'portfolio'),
+	        'priority'  => 200
     	)
     );
     
     $wp_customize->add_section(
-    'portfolio_layout_options',
-    array(
-        'title'     => __('Layout & Features', 'portfolio'),
-        'priority'  => 300
+	    'portfolio_layout_options',
+	    array(
+	        'title'     => __('Layout & Features', 'portfolio'),
+	        'priority'  => 300
     	)
     );
     
     $wp_customize->add_section(
-    'portfolio_post_options',
-    array(
-        'title'     => __('Post display', 'portfolio'),
-        'priority'  => 400,
-        'active_callback' => 'portfolio_is_singular'
+    	'portfolio_post_options',
+	    array(
+	        'title'     => __('Post display', 'portfolio'),
+	        'priority'  => 400,
+	        'active_callback' => 'portfolio_is_singular'
+    	)
+    );
+
+    $wp_customize->add_section(
+   		'portfolio_advanced',
+    	array(
+    	    'title'     => __('Advanced settings', 'portfolio'),
+			'description' => __('If you change the portfolio image dimensions please remember to regenerate all thumbnails i.e. using the Regenerate Thumbnails plugin.', 'portfolio'),
+        	'priority'  => 500
     	)
     );
     
@@ -222,6 +231,24 @@ function portfolio_init_customizer( $wp_customize ) {
 	        'default'   => '1',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+	    )
+	);
+
+	$wp_customize->add_setting(
+	    'portfolio_img_w',
+	    array(
+	        'default'   => '300',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+
+	$wp_customize->add_setting(
+	    'portfolio_img_h',
+	    array(
+	        'default'   => '400',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
 	    )
 	);
 	
@@ -454,6 +481,24 @@ function portfolio_init_customizer( $wp_customize ) {
             'section'  => 'portfolio_post_options',
             'label'    => __('Show author', 'portfolio'),
             'type'     => 'checkbox'
+        )
+    );
+
+    $wp_customize->add_control(
+        'portfolio_img_w',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio image width (px)', 'portfolio'),
+            'type'     => 'text'
+        )
+    );
+
+    $wp_customize->add_control(
+        'portfolio_img_h',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio image height (px)', 'portfolio'),
+            'type'     => 'text'
         )
     );
 }
