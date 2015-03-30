@@ -5,10 +5,10 @@
 #
 #, fuzzy
 msgid   ""
-msgstr  "Project-Id-Version: 1.2.0\n"
+msgstr  "Project-Id-Version: 1.3.0\n"
         "Report-Msgid-Bugs-To: \n"
         "POT-Creation-Date: 2014-09-15 15:12+0200\n"
-        "PO-Revision-Date: 2015-02-18 20:32+0200\n"
+        "PO-Revision-Date: 2015-03-30 11:16+0200\n"
         "Last-Translator: Tomasz Dziuda <dziudek@gavick.com>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
         "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr  ""
 msgid   "1 Comment"
 msgstr  ""
 
-#: theme-customizer.php:295
+#: theme-customizer.php:361
 msgid   "2 Columns"
 msgstr  ""
 
@@ -40,11 +40,11 @@ msgstr  ""
 msgid   "2 Comments"
 msgstr  ""
 
-#: theme-customizer.php:294
+#: theme-customizer.php:360
 msgid   "3 Columns"
 msgstr  ""
 
-#: theme-customizer.php:293
+#: theme-customizer.php:359
 msgid   "4 Column"
 msgstr  ""
 
@@ -52,16 +52,24 @@ msgstr  ""
 msgid   "<span class=\"meta-nav\">&larr;</span> Previous"
 msgstr  ""
 
+#: theme-customizer.php:271
+msgid   "Adjust header size to the logo image"
+msgstr  ""
+
+#: theme-customizer.php:40
+msgid   "Advanced settings"
+msgstr  ""
+
 #: author.php:17
 #, php-format
 msgid   "All posts by %s"
 msgstr  ""
 
-#: theme-customizer.php:290
+#: theme-customizer.php:356
 msgid   "Amount of article columns"
 msgstr  ""
 
-#: functions.php:274
+#: functions.php:277
 msgid   "Appears at the bottom of the website."
 msgstr  ""
 
@@ -69,11 +77,11 @@ msgstr  ""
 msgid   "Blog Archives"
 msgstr  ""
 
-#: theme-customizer.php:259
+#: theme-customizer.php:325
 msgid   "Body Font"
 msgstr  ""
 
-#: functions.php:272
+#: functions.php:275
 msgid   "Bottom widget area"
 msgstr  ""
 
@@ -90,7 +98,7 @@ msgstr  ""
 msgid   "Comments are closed."
 msgstr  ""
 
-#: theme-customizer.php:317
+#: theme-customizer.php:383
 msgid   "Content width"
 msgstr  ""
 
@@ -99,11 +107,11 @@ msgstr  ""
 msgid   "Daily Archives: %s"
 msgstr  ""
 
-#: theme-customizer.php:304
+#: theme-customizer.php:370
 msgid   "Date format"
 msgstr  ""
 
-#: theme-customizer.php:307
+#: theme-customizer.php:373
 msgid   "Default theme format"
 msgstr  ""
 
@@ -112,11 +120,11 @@ msgstr  ""
 msgid   "Edit"
 msgstr  ""
 
-#: theme-customizer.php:326
+#: theme-customizer.php:392
 msgid   "Enable word-break"
 msgstr  ""
 
-#: theme-customizer.php:13
+#: theme-customizer.php:15
 msgid   "Font options"
 msgstr  ""
 
@@ -124,24 +132,30 @@ msgstr  ""
 msgid   "Free WordPress Theme designed by "
 msgstr  ""
 
-#: theme-customizer.php:344
+#: theme-customizer.php:410
 msgid   "Frontpage items animation"
 msgstr  ""
 
-#: theme-customizer.php:335
+#: theme-customizer.php:401
 msgid   "Full-width images"
 msgstr  ""
 
-#: theme-customizer.php:249
+#: theme-customizer.php:315
 msgid   "Google Font URL for Header"
 msgstr  ""
 
-#: theme-customizer.php:280
+#: theme-customizer.php:346
 msgid   "Google Font URL for the Body"
 msgstr  ""
 
-#: theme-customizer.php:228
+#: theme-customizer.php:294
 msgid   "Header Font"
+msgstr  ""
+
+#: theme-customizer.php:41
+msgid   "If you change the portfolio image dimensions please remember to "
+        "regenerate all thumbnails i.e. using the Regenerate Thumbnails "
+        "plugin."
 msgstr  ""
 
 #: 404.php:21
@@ -153,7 +167,7 @@ msgid   "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
         "searching can help."
 msgstr  ""
 
-#: theme-customizer.php:21
+#: theme-customizer.php:23
 msgid   "Layout & Features"
 msgstr  ""
 
@@ -161,7 +175,7 @@ msgstr  ""
 msgid   "Leave a Reply"
 msgstr  ""
 
-#: theme-customizer.php:205
+#: theme-customizer.php:261
 msgid   "Logo image"
 msgstr  ""
 
@@ -178,7 +192,7 @@ msgstr  ""
 msgid   "Newer Comments &rarr;"
 msgstr  ""
 
-#: functions.php:312
+#: functions.php:315
 msgid   "Newer posts"
 msgstr  ""
 
@@ -194,20 +208,20 @@ msgstr  ""
 msgid   "Nothing Found"
 msgstr  ""
 
-#: functions.php:306
+#: functions.php:309
 msgid   "Older posts"
 msgstr  ""
 
-#: functions.php:309
+#: functions.php:312
 msgid   "Page"
 msgstr  ""
 
-#: functions.php:255
+#: functions.php:258
 #, php-format
 msgid   "Page %s"
 msgstr  ""
 
-#: image.php:31 content-video.php:31 content-archive.php:30 page.php:28
+#: image.php:31 content-video.php:31 content-archive.php:34 page.php:28
 #: content-gallery.php:22 content-quote.php:16 content-link.php:16
 #: content.php:23 content-image.php:22
 msgid   "Pages:"
@@ -217,11 +231,23 @@ msgstr  ""
 msgid   "Pingback:"
 msgstr  ""
 
+#: functions.php:466
+msgid   "Portfolio image"
+msgstr  ""
+
+#: theme-customizer.php:500
+msgid   "Portfolio image height (px)"
+msgstr  ""
+
+#: theme-customizer.php:491
+msgid   "Portfolio image width (px)"
+msgstr  ""
+
 #: comments-template.php:36
 msgid   "Post author"
 msgstr  ""
 
-#: theme-customizer.php:29
+#: theme-customizer.php:31
 msgid   "Post display"
 msgstr  ""
 
@@ -229,7 +255,7 @@ msgstr  ""
 msgid   "Posted in "
 msgstr  ""
 
-#: theme-customizer.php:217
+#: theme-customizer.php:283
 msgid   "Primary Color"
 msgstr  ""
 
@@ -238,7 +264,7 @@ msgid   "Proudly published with "
 msgstr  ""
 
 #: content-video.php:21 content-video.php:26 content-video.php:28
-#: content-archive.php:29 content-gallery.php:17 content-gallery.php:21
+#: content-archive.php:33 content-gallery.php:17 content-gallery.php:21
 #: content-quote.php:15 content-link.php:15 content.php:18 content.php:22
 #: content-image.php:17 content-image.php:21
 msgid   "Read more"
@@ -255,31 +281,39 @@ msgstr  ""
 msgid   "Search Results for: %s"
 msgstr  ""
 
-#: functions.php:428
+#: functions.php:431
 msgid   "Share:"
 msgstr  ""
 
-#: theme-customizer.php:398
+#: theme-customizer.php:482
 msgid   "Show author"
 msgstr  ""
 
-#: theme-customizer.php:371
+#: theme-customizer.php:455
 msgid   "Show category"
 msgstr  ""
 
-#: theme-customizer.php:362
+#: theme-customizer.php:446
 msgid   "Show date"
 msgstr  ""
 
-#: theme-customizer.php:389
+#: theme-customizer.php:419
+msgid   "Show excerpts on portfolio"
+msgstr  ""
+
+#: theme-customizer.php:428
+msgid   "Show featured image"
+msgstr  ""
+
+#: theme-customizer.php:473
 msgid   "Show social icons"
 msgstr  ""
 
-#: theme-customizer.php:380
+#: theme-customizer.php:464
 msgid   "Show tags"
 msgstr  ""
 
-#: theme-customizer.php:353
+#: theme-customizer.php:437
 msgid   "Show title"
 msgstr  ""
 
@@ -306,7 +340,7 @@ msgid   "This post is password protected. Enter the password to view any "
         "comments."
 msgstr  ""
 
-#: theme-customizer.php:308
+#: theme-customizer.php:374
 msgid   "WordPress Date Format"
 msgstr  ""
 
@@ -326,6 +360,6 @@ msgstr  ""
 msgid   "Your comment is awaiting moderation."
 msgstr  ""
 
-#: functions.php:309
+#: functions.php:312
 msgid   "of"
 msgstr  ""
