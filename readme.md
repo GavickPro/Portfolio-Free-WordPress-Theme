@@ -63,6 +63,17 @@ Full list of used images:
 
 ## Changelog
 
+### 1.3.0 - March 30, 2015
+
+* Added custom portfolio image size
+* Added option to hide featured images
+* Added logo auto-size
+* Added disabled loading of the two the same font URLs
+* Totally rewritten Theme Customizer code
+* Fixed default font configuration
+* Fixed issue with the content width option
+* Fixed issue with active menu item on mobile devices
+
 ### 1.2.0 - February 19, 2015
 
 * Added option to enable/disable frontpage animation
