@@ -75,6 +75,13 @@ if(!function_exists('portfolio_setup')) {
 		 */
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 	
+		/**
+		 * Add support for the title-tag
+		 *
+		 * @since Portfolio 1.4
+		 */
+		add_theme_support( 'title-tag' );
+	
 		/*
 		 * This theme supports all available post formats by default.
 		 * See http://codex.wordpress.org/Post_Formats
@@ -224,45 +231,6 @@ if(!function_exists('portfolio_styles')) {
 }
 
 add_action('wp_enqueue_scripts', 'portfolio_styles');
-
-if(!function_exists('portfolio_wp_title')) {
-	/**
-	 * Filter the page title.
-	 *
-	 * Creates a nicely formatted and more specific title element text for output
-	 * in head of document, based on current view.
-	 *
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep   Optional separator.
-	 * @return string The filtered title.
-	 */
-	function portfolio_wp_title($title, $sep) {
-		global $paged, $page;
-	
-		if (is_feed()) {
-			return $title;
-		}
-	
-		// Add the site name.
-		$title .= get_bloginfo('name');
-	
-		// Add the site description for the home/front page.
-		$site_description = get_bloginfo('description', 'display');
-		if ($site_description && (is_home() || is_front_page())) {
-			$title = "$title $sep $site_description";
-		}
-	
-		// Add a page number if necessary.
-		if ($paged >= 2 || $page >= 2) {
-			$title = "$title $sep " . sprintf(__('Page %s', 'portfolio'), max($paged, $page));
-		}
-	
-		return $title;
-	}
-}
-
-add_filter('wp_title', 'portfolio_wp_title', 10, 2);
 
 if(!function_exists('portfolio_widgets_init')) {
 	/**
@@ -473,3 +441,16 @@ if(!function_exists('portfolio_image_sizes')) {
 add_image_size('gk-portfolio-size', get_theme_mod('portfolio_img_w', 300), get_theme_mod('portfolio_img_h', 400), true);
 add_filter('image_size_names_choose', 'portfolio_image_sizes');
 
+if (!function_exists('_wp_render_title_tag')) {
+    /**
+     * Add backward compatibility for the title tag
+     *
+     * @since Portfolio 1.4
+     */
+    function theme_slug_render_title() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+	}
+    add_action( 'wp_head', 'theme_slug_render_title' );
+}
