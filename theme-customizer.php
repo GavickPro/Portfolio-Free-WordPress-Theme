@@ -26,6 +26,14 @@ function portfolio_init_customizer( $wp_customize ) {
     );
     
     $wp_customize->add_section(
+        'portfolio_effects_options',
+        array(
+            'title'     => __('Effects', 'portfolio'),
+            'priority'  => 350
+    	)
+    );
+    
+    $wp_customize->add_section(
     	'portfolio_post_options',
 	    array(
 	        'title'     => __('Post display', 'portfolio'),
@@ -138,7 +146,7 @@ function portfolio_init_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'portfolio_word_break',
 	    array(
-	        'default'   => '0',
+	        'default'   => '',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
 	    )
@@ -247,6 +255,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	    'portfolio_img_h',
 	    array(
 	        'default'   => '400',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_item_hover',
+	    array(
+	        'default'   => '',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'portfolio_intval'
 	    )
@@ -404,15 +421,6 @@ function portfolio_init_customizer( $wp_customize ) {
     );
     
     $wp_customize->add_control(
-        'portfolio_frontpage_animation',
-        array(
-            'section'  => 'portfolio_layout_options',
-            'label'    => __('Frontpage items animation', 'portfolio'),
-            'type'     => 'checkbox'
-        )
-    );
-    
-    $wp_customize->add_control(
         'portfolio_show_excerpts',
         array(
             'section'  => 'portfolio_layout_options',
@@ -499,6 +507,24 @@ function portfolio_init_customizer( $wp_customize ) {
             'section'  => 'portfolio_advanced',
             'label'    => __('Portfolio image height (px)', 'portfolio'),
             'type'     => 'text'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_frontpage_animation',
+        array(
+            'section'  => 'portfolio_effects_options',
+            'label'    => __('Frontpage items animation', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_item_hover',
+        array(
+            'section'  => 'portfolio_effects_options',
+            'label'    => __('Hover effect in portfolio', 'portfolio'),
+            'type'     => 'checkbox'
         )
     );
 }
