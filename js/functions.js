@@ -24,6 +24,16 @@
             wrapper = jQuery(wrapper);
             var img = wrapper.find('header > img')[0];
 
+			var interval = 500;
+			
+			if(wrapper.hasClass('slow-animation')) {
+				interval = 750;
+			}
+			
+			if(wrapper.hasClass('fast-animation')) {
+				interval = 250;
+			}
+
             if(img) {
               // wait for the images
               var timer = setInterval(function() {
@@ -47,7 +57,7 @@
                   // add class with delay
                   setTimeout(function() {
                     img_container.addClass('loaded');
-                  }, 250);
+                  }, interval);
                 }          
               }, 500);
               // add necessary mouse events

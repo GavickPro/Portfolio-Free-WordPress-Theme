@@ -269,6 +269,24 @@ function portfolio_init_customizer( $wp_customize ) {
 	    )
 	);
 	
+	$wp_customize->add_setting(
+	    'portfolio_frontpage_animation_type',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_frontpage_animation_speed',
+	    array(
+	        'default'   => '500',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
 	// Add control for the settings
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control( 
@@ -526,6 +544,39 @@ function portfolio_init_customizer( $wp_customize ) {
             'label'    => __('Hover effect in portfolio', 'portfolio'),
             'type'     => 'checkbox'
         )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_frontpage_animation_type',
+        array(
+            'section'  => 'portfolio_effects_options',
+            'label'    => __('Animation type', 'portfolio'),
+            'type'     => 'select',
+            'choices'  => array(
+            	'1' => __('Default (flip)', 'portfolio'),
+            	'2' => __('Center flip', 'portfolio'),
+            	'3' => __('Scale bottom', 'portfolio'),
+            	'4' => __('Scale center', 'portfolio'),
+            	'5' => __('Scale top', 'portfolio'),
+            	'6' => __('Opacity', 'portfolio')
+            ),
+            'active_callback' => 'portfolio_active_animations'
+       	 )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_frontpage_animation_speed',
+        array(
+            'section'  => 'portfolio_effects_options',
+            'label'    => __('Animation speed', 'portfolio'),
+            'type'     => 'select',
+            'choices'  => array(
+            	'250' => __('Fast animation', 'portfolio'),
+            	'500' => __('Normal animation', 'portfolio'),
+            	'750' => __('Slow animation', 'portfolio'),
+            ),
+            'active_callback' => 'portfolio_active_animations'
+       	 )
     );
 }
 

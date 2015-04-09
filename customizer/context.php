@@ -23,4 +23,9 @@ function portfolio_logo_config($control) {
 	return $option->value() != '';
 }
 
+function portfolio_active_animations($control) {
+	$option = $control->manager->get_setting('portfolio_frontpage_animation');
+	return $option->value() != '';
+}
+
 // EOF

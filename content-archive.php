@@ -5,14 +5,37 @@
  *
  */
 
+$animation_type = '';
+$animation_speed = '';
+
+switch(get_theme_mod('portfolio_frontpage_animation_type', '1')) {
+	case '2': $animation_type = ' flip-center-animation'; break;
+	case '3': $animation_type = ' scale-animation'; break;
+	case '4': $animation_type = ' scale-center-animation'; break;
+	case '5': $animation_type = ' scale-top-animation'; break;
+	case '6': $animation_type = ' opacity-animation'; break;
+	default : $animation_type = ''; break;
+}
+
+switch(get_theme_mod('portfolio_frontpage_animation_speed', '500')) {
+	case '250': $animation_speed = ' fast-animation'; break;
+	case '750': $animation_speed = ' slow-animation'; break;
+	default : $animation_speed = ''; break;
+}
+
 $post_css_classes = '';
 $post_css_classes .= get_theme_mod('portfolio_frontpage_animation', '1') == '' ? ' no-animation' : '';
 $post_css_classes .= get_theme_mod('portfolio_item_hover', '') == '1' ? ' hover-effect' : '';
 
+$post_helper_css_classes = '';
+$post_helper_css_classes .= get_theme_mod('portfolio_frontpage_animation_type', '1') !== ''  ? $animation_type : '';
+$post_helper_css_classes .= get_theme_mod('portfolio_frontpage_animation_speed', '500') !== ''  ? $animation_speed : '';
+$post_helper_css_classes .= (get_theme_mod('portfolio_show_excerpts', '1') == '0' && is_sticky()) ? ' sticky' : '';
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($post_css_classes); ?> data-cols="<?php echo get_theme_mod('portfolio_article_column', '4')?>">
-	<div class="article-helper notloaded<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '0' && is_sticky()) :?> sticky<?php endif; ?>">
+	<div class="article-helper notloaded<?php echo $post_helper_css_classes; ?>">
 		<?php if (is_home() || is_search() || is_archive() || is_tag()) : // Only display Excerpts for Search ?>
 			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1') : ?>
 			<div class="post-preview transition">
