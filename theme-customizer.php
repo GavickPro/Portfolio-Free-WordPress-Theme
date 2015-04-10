@@ -261,6 +261,42 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_block_h',
+	    array(
+	        'default'   => '380',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_block_h_mobile',
+	    array(
+	        'default'   => '320',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_block_padding',
+	    array(
+	        'default'   => '56px 36px 36px 36px',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'sanitize_text_field'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_block_padding_mobile',
+	    array(
+	        'default'   => '20px 16px 36px 16px',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'sanitize_text_field'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 	    'portfolio_item_hover',
 	    array(
 	        'default'   => '',
@@ -577,6 +613,42 @@ function portfolio_init_customizer( $wp_customize ) {
             ),
             'active_callback' => 'portfolio_active_animations'
        	 )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_block_h',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio block height (px)', 'portfolio'),
+            'type'     => 'text'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_block_h_mobile',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio block height on mobile (px)', 'portfolio'),
+            'type'     => 'text'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_block_padding',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio block padding', 'portfolio'),
+            'type'     => 'text'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_block_padding_mobile',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Portfolio block padding on mobile', 'portfolio'),
+            'type'     => 'text'
+        )
     );
 }
 

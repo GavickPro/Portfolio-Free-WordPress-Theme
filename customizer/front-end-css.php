@@ -133,6 +133,32 @@ function portfolio_customizer_css() {
         	max-height: none;
         }
         <?php endif; ?>
+        
+        .article-helper {
+	        height: <?php echo get_theme_mod('portfolio_block_h', '380'); ?>px; 
+        }
+        
+        .site-content.archive article {
+        	height: <?php echo intval(get_theme_mod('portfolio_block_h', '380')) + 36; ?>px;
+        }
+        
+        .post-preview {
+        	padding: <?php echo get_theme_mod('portfolio_block_padding', '56px 36px 36px 36px'); ?>;
+        }
+        
+        @media (max-width: 1140px) {
+        	.site-content.archive article {
+        		height: <?php echo intval(get_theme_mod('portfolio_block_h_mobile', '320')) + 16; ?>px;
+        	}
+        	
+        	.article-helper {
+        		height: <?php echo get_theme_mod('portfolio_block_h_mobile', '320'); ?>px;
+        	}
+        	
+        	.post-preview {
+        		padding: <?php echo get_theme_mod('portfolio_block_padding_mobile', '20px 16px 36px 16px'); ?>;
+        	}
+        }
     </style>
     <?php   
     
