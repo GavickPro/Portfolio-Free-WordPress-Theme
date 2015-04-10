@@ -2739,11 +2739,6 @@ select {
 		width: 100%;
 	}
 	
-	.nav-menu .sub-menu li:first-child,
-	.nav-menu .children li:first-child {
-		border-top: 1px solid #e5e5e5;
-	}
-	
 	.main-navigation.opened .nav-menu {
 		float: none;
 		margin: 20px auto;
