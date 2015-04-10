@@ -2881,3 +2881,10 @@ select {
 		padding-left: 38px;
 	}
 }
+
+/* Fix for the mobile menu animation */
+@media (min-width: 721px) {
+	.menu-main-menu-container {
+		height: auto!important;
+	}
+}
