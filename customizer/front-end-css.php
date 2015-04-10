@@ -115,7 +115,9 @@ function portfolio_customizer_css() {
         .comment-post-author,
         .sticky .post-preview:after,
         .entry-header.sticky:after,
-        .article-helper.sticky:after {
+        .article-helper.sticky:after,
+        #prev-post > a:hover,
+        #next-post > a:hover {
         	background: <?php echo $primary_color; ?>;
         }
         .comments-title > span,

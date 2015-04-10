@@ -323,6 +323,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	    )
 	);
 	
+	$wp_customize->add_setting(
+	    'portfolio_show_post_navigation',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
 	// Add control for the settings
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control( 
@@ -506,6 +515,15 @@ function portfolio_init_customizer( $wp_customize ) {
         array(
             'section'  => 'portfolio_post_options',
             'label'    => __('Show date', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_show_post_navigation',
+        array(
+            'section'  => 'portfolio_post_options',
+            'label'    => __('Show post navigation', 'portfolio'),
             'type'     => 'checkbox'
         )
     );

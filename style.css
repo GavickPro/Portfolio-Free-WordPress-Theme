@@ -28,6 +28,7 @@ Tags: green, gray, white, one-column, fluid-layout, responsive-layout, custom-ba
 	3.10 Search Results/No posts
 	3.12 404 Page
 	3.13 Comments
+	3.14 Post navigation
 4. Widgets
 5. Footer
 6. RWD
@@ -2258,6 +2259,83 @@ footer.entry-meta > .edit-link {
 	text-align: center;
 }
 
+/**
+ * 3.14. Post Navigation
+ * ----------------------------------------------------------------------------
+ */
+
+#prev-post,
+#next-post {
+	height: 54px;
+	left: 0;	
+	
+	position: fixed;
+	top: 50%;
+	width: 54px;
+}
+
+#next-post {
+	left: auto;
+	right: 0;
+}
+
+#prev-post > a,
+#next-post > a {
+	background: #333;
+	border-radius: 0 50% 50% 0;
+	display: block;
+	height: 54px;
+	margin-left: -12px;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	width: 54px;
+}
+
+#next-post > a {
+	border-radius: 50% 0 0 50%;
+	margin-left: auto;
+	margin-right: -12px;
+}
+
+#prev-post > a:hover,
+#next-post > a:hover {
+	margin-left: 0;
+}
+
+#next-post > a:hover {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+#prev-post:hover i {
+	text-indent: -10px;
+}
+
+#next-post:hover i {
+	text-indent: 10px;
+}
+
+#prev-post i,
+#next-post i {
+	color: #fff;
+	font-size: 24px;
+	line-height: 54px;
+	text-align: center;
+	text-indent: 6px;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	width: 54px;
+}
+
+#next-post i {
+	text-indent: -6px;
+}
 
 /**
  * 4. Widgets
@@ -2806,6 +2884,10 @@ select {
 
 	#content .featured-gallery {
 		padding-left: 24px;
+	}
+	#prev-post,
+	#next-post {
+		display: none;
 	}
 }
 

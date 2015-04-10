@@ -13,6 +13,11 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 	
+	<?php if(get_theme_mod('portfolio_show_post_navigation', '1') == '1') : ?>
+	<?php previous_post_link( '<div id="prev-post">%link</div>', '<i class="fa fa-arrow-left"></i>', TRUE ); ?>
+	<?php next_post_link( '<div id="next-post">%link</div>', '<i class="fa fa-arrow-right"></i>', TRUE ); ?>
+	<?php endif; ?>
+	
 	<?php get_template_part( 'content', 'footer' ); ?>
 	<?php comments_template(); ?>
 
