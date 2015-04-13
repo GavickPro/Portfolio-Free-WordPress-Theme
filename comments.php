@@ -18,7 +18,8 @@
 	endif;
 ?>
 
-<div id="comments" class="comments-area <?php if(!comments_open()) : echo 'no-comments'; endif; ?>">
+<?php if (have_comments() || comments_open()) : ?>
+<div id="comments" class="comments-area">
 	<?php if (have_comments()) : ?>
 		<h3 class="comments-title">
 			<span>
@@ -70,3 +71,4 @@
 		); 
 	?>
 </div><!-- #comments -->
+<?php endif;
