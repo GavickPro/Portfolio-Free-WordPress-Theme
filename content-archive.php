@@ -50,9 +50,11 @@ $post_helper_css_classes .= (get_theme_mod('portfolio_show_excerpts', '1') == '0
 				<?php get_template_part('content', 'header-simple'); ?>
 			<?php endif; ?>
 		<?php
-			$tag_list = get_the_tag_list('<ul class="tags-links"><li>',', </li><li>','</li></ul>');
-			if ($tag_list) {
-				echo $tag_list;
+			if(get_theme_mod('portfolio_show_tags', '1') == '1') {
+				$tag_list = get_the_tag_list('<ul class="tags-links"><li>',', </li><li>','</li></ul>');
+				if ($tag_list) {
+					echo $tag_list;
+				}
 			}
 		?>
 		<?php else : ?>
