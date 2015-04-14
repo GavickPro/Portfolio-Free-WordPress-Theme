@@ -17,6 +17,19 @@ function portfolio_customize_preview_js() {
     	    	$(document).find('head').append($('<style id="portfolio-new-css-1">' + new_css + '</style>'));
     	    });
     	});
+    	
+    	wp.customize('background_color', function(value) {
+    	    value.bind( function( to ) {
+    	    	to = to ? to : '#f1f1f1';
+    	    	// set colors:
+    	    	var new_css = 'body.custom-background #main {background: '+to+';}';
+    	    	if($(document).find('#portfolio-new-css-2').length) {
+    	    		$(document).find('#portfolio-new-css-2').remove();
+    	    	}
+    	    	
+    	    	$(document).find('head').append($('<style id="portfolio-new-css-2">' + new_css + '</style>'));
+    	    });
+    	});
     })(jQuery);
     </script>
     <?php

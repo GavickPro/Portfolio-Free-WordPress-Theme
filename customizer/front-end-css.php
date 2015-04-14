@@ -31,6 +31,10 @@ function portfolio_customizer_css() {
     	body { font-family: <?php echo $body_portfolio_font; ?> }
         .site-title { font-family: <?php echo $portfolio_font; ?> }
     
+    	body.custom-background #main {
+    		background-color: <?php get_theme_mod('background_color', '#f1f1f1'); ?>;
+    	}
+    
     	#primary,
     	#comments,
     	.author-info,
