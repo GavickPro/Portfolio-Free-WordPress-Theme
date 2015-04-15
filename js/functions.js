@@ -20,6 +20,27 @@
 			add_class(blocks[i], 'article-helper animated', i * 200);
 		}
 		
+		// Fix :hover portfolio effect on the touch screens
+		jQuery('.article-helper').each(function(i, block) {
+			block = jQuery(block);
+			
+			if(block.find('.post-preview').length) {
+				block.bind('touchstart', function() {
+					block.attr('data-touch-time', new Date());
+				});
+				
+				block.bind('touchend', function(e) {				
+					if(block.attr('data-touch-time') - new Date() < 500) {
+						if(block.hasClass('article-hover')) {
+							block.removeClass('article-hover');
+						} else {
+							block.addClass('article-hover');
+						}
+					}
+				});
+			}
+		});
+		
 		jQuery('.article-helper.notloaded').each(function(i, wrapper) {
             wrapper = jQuery(wrapper);
             var img = wrapper.find('header > img')[0];
@@ -49,8 +70,19 @@
                   img_container.appendTo(wrapper);
                   if(url) {
                   	img_container.css('cursor', 'pointer');
+                  	
+                  	img_container.bind('touchend', function(e) {
+                  		img_container.attr('data-touched', 'true');
+                  		
+                  		setTimeout(function() {
+                  			img_container.attr('data-touched', 'false');
+                  		}, 250);
+                  	});
+                  	
                   	img_container.click(function() {
-                  		window.location = img_container.attr('data-url');
+                  		if(img_container.attr('data-touched') === 'false') {
+                  			window.location = img_container.attr('data-url');
+                  		}
                   	});
                   }
                   wrapper.removeClass('notloaded');
