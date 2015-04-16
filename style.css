@@ -452,6 +452,10 @@ img.wp-smiley,
 	padding: 0 0 30px 0;
 }
 
+#primary.no-comments {
+	margin-bottom: 40px;
+}
+
 .home #primary,
 .archive #primary,
 .tag #primary,
