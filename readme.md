@@ -63,6 +63,24 @@ Full list of used images:
 
 ## Changelog
 
+### 1.4.0 - April 16, 2015
+
+* Added option to hide tags in the portfolio view
+* Added navigation between posts in the single item view
+* Added options for the portfolio block height and padding
+* Added mobile menu animation
+* Added submenu animation on hover
+* Added initial-scale=1 in the viewport in order to fix rotation issues on iOS devices
+* Added support for the title-tag theme future
+* Added option for the portfolio animation type and speed
+* Added option to enable portfolio :hover effect
+* Fixed issue with empty comments block when comments are closed and there is no earlier comments
+* Fixed problem with non-working background color selection control
+* Fixed issue with spacing when comments are disabled on pages
+* Fixed issue with access to the portfolio items description on touch screen devices
+* Small visual fix for the mobile menu
+* Tablet and Mobile CSS improvements and fixes of the small issues
+
 ### 1.3.0 - March 30, 2015
 
 * Added custom portfolio image size
