@@ -80,7 +80,7 @@
                   	});
                   	
                   	img_container.click(function() {
-                  		if(img_container.attr('data-touched') === 'false') {
+                  		if(!img_container.attr('data-touched') || img_container.attr('data-touched') === 'false') {
                   			window.location = img_container.attr('data-url');
                   		}
                   	});
