@@ -37,7 +37,7 @@ $post_helper_css_classes .= (get_theme_mod('portfolio_show_excerpts', '1') == '0
 <article id="post-<?php the_ID(); ?>" <?php post_class($post_css_classes); ?> data-cols="<?php echo get_theme_mod('portfolio_article_column', '4')?>">
 	<div class="article-helper notloaded<?php echo $post_helper_css_classes; ?>">
 		<?php if (is_home() || is_search() || is_archive() || is_tag()) : // Only display Excerpts for Search ?>
-			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1') : ?>
+			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1' || !has_post_thumbnail()) : ?>
 			<div class="post-preview transition">
 				<?php get_template_part('content', 'header'); ?>
 			
