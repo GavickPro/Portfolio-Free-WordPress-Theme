@@ -19,7 +19,13 @@
 
 	<?php if(get_theme_mod('portfolio_post_show_title', '1') == '1') : ?>
 	<h<?php echo is_single() ? '1' : '2'; ?> class="entry-title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+		<?php if(!is_singular()) : ?>
+		<a href="<?php the_permalink(); ?>" rel="bookmark">
+		<?php endif; ?>
+			<?php the_title(); ?>
+		<?php if(!is_singular()) : ?>
+		</a>
+		<?php endif; ?>
 	</h<?php echo is_single() ? '1' : '2'; ?>>
 	<?php endif; ?>
 </header><!-- .entry-header -->

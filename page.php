@@ -19,7 +19,7 @@ get_header(); ?>
 							<?php endif; ?>
 	
 							<h1 class="entry-title">
-								<a href="<?php the_permalink(); ?>" rel="bookmark"><span><?php the_title(); ?></span></a>
+								<?php the_title(); ?>
 							</h1>
 						</header><!-- .entry-header -->
 	
