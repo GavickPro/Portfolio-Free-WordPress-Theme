@@ -1802,6 +1802,10 @@ footer.entry-meta > .edit-link {
 	z-index: 1;
 }
 
+.post-preview[data-url] {
+	cursor: pointer;
+}
+
 .post-preview.transition {
 	-webkit-transition: all .3s ease-out;
 	-moz-transition: all .3s ease-out;

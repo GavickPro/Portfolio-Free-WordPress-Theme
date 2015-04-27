@@ -262,6 +262,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
 	    )
 	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_whole_overlay_clickable',
+	    array(
+	        'default'   => '0',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_sanitize_checkbox'
+	    )
+	);
 
 	$wp_customize->add_setting(
 	    'portfolio_img_w',
@@ -536,6 +545,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	    array(
 	        'section'  => 'portfolio_layout_options',
 	        'label'    => __('Show tags on portfolio', 'portfolio'),
+	        'type'     => 'checkbox'
+	    )
+	);
+	
+	$wp_customize->add_control(
+	    'portfolio_whole_overlay_clickable',
+	    array(
+	        'section'  => 'portfolio_layout_options',
+	        'label'    => __('Whole overlay clickable in portfolio', 'portfolio'),
 	        'type'     => 'checkbox'
 	    )
 	);

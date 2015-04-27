@@ -38,10 +38,9 @@ $post_helper_css_classes .= (get_theme_mod('portfolio_show_excerpts', '1') == '0
 	<div class="article-helper notloaded<?php echo $post_helper_css_classes; ?>">
 		<?php if (is_home() || is_search() || is_archive() || is_tag()) : // Only display Excerpts for Search ?>
 			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1' || !has_post_thumbnail()) : ?>
-			<div class="post-preview transition">
+			<div class="post-preview transition"<?php if(get_theme_mod('portfolio_whole_overlay_clickable', '1') == '1') : ?> data-url="<?php echo get_permalink(); ?>"<?php endif; ?>>
 				<?php get_template_part('content', 'header'); ?>
 			
-				
 				<div class="entry-summary">
 					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_excerpt(); ?></a>
 				</div><!-- .entry-summary -->

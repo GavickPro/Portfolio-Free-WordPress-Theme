@@ -25,6 +25,8 @@
 			block = jQuery(block);
 			
 			if(block.find('.post-preview').length) {
+				var preview = block.find('.post-preview');
+				
 				block.bind('touchstart', function() {
 					block.attr('data-touch-time', new Date());
 				});
@@ -38,6 +40,12 @@
 						}
 					}
 				});
+				
+				if(preview.attr('data-url')) {
+					preview.click(function() {
+						window.location.href = preview.attr('data-url');
+					});
+				}
 			}
 		});
 		
