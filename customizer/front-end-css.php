@@ -30,10 +30,6 @@ function portfolio_customizer_css() {
     <style type="text/css">
     	body { font-family: <?php echo $body_portfolio_font; ?> }
         .site-title { font-family: <?php echo $portfolio_font; ?> }
-    
-    	body.custom-background #main {
-    		background-color: <?php get_theme_mod('background_color', '#f1f1f1'); ?>;
-    	}
     	
     	.site-main #page {
     		max-width: <?php echo get_theme_mod('portfolio_portfolio_width', '1260'); ?>px;
