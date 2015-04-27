@@ -147,6 +147,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_portfolio_width',
+	    array(
+	        'default'   => '1260',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 	    'portfolio_word_break',
 	    array(
 	        'default'   => '',
@@ -482,6 +491,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	    array(
 	        'section'  => 'portfolio_layout_options',
 	        'label'    => __('Content width', 'portfolio'),
+	        'type'     => 'text'
+	    )
+	);
+	
+	$wp_customize->add_control(
+	    'portfolio_portfolio_width',
+	    array(
+	        'section'  => 'portfolio_layout_options',
+	        'label'    => __('Portfolio view width', 'portfolio'),
 	        'type'     => 'text'
 	    )
 	);

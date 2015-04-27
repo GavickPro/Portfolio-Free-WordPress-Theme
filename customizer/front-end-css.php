@@ -34,6 +34,10 @@ function portfolio_customizer_css() {
     	body.custom-background #main {
     		background-color: <?php get_theme_mod('background_color', '#f1f1f1'); ?>;
     	}
+    	
+    	.site-main #page {
+    		max-width: <?php echo get_theme_mod('portfolio_portfolio_width', '1260'); ?>px;
+    	}
     
     	#primary,
     	#comments,
