@@ -14,8 +14,20 @@ get_header(); ?>
 	</div><!-- #primary -->
 	
 	<?php if(get_theme_mod('portfolio_show_post_navigation', '1') == '1') : ?>
-	<?php previous_post_link( '<div id="prev-post">%link</div>', '<i class="fa fa-arrow-left"></i>', TRUE ); ?>
-	<?php next_post_link( '<div id="next-post">%link</div>', '<i class="fa fa-arrow-right"></i>', TRUE ); ?>
+	<?php 
+		previous_post_link( 
+			'<div id="prev-post">%link</div>', 
+			'<i class="fa fa-arrow-left"></i>', 
+			(get_theme_mod('portfolio_show_post_navigation_same_taxonomy', '0') == '0' ? FALSE : TRUE)
+		); 
+	?>
+	<?php 
+		next_post_link( 
+			'<div id="next-post">%link</div>', 
+			'<i class="fa fa-arrow-right"></i>', 
+			(get_theme_mod('portfolio_show_post_navigation_same_taxonomy', '0') == '0' ? FALSE : TRUE)
+		); 
+	?>
 	<?php endif; ?>
 	
 	<?php get_template_part( 'content', 'footer' ); ?>
