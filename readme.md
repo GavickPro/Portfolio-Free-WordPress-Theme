@@ -63,6 +63,17 @@ Full list of used images:
 
 ## Changelog
 
+### 1.4.1 - April 29, 2015
+
+* Added option to specify the portfolio view width
+* Added option to disable navigation only inside one category.
+* Added option to enable whole clickable overlay in the portfolio view.
+* Improved SEO - Removed links from the header on the single items or pages
+* Removed unnecessary code for the page background
+* Fixed issue with hidden title when featured image is disabled in the post view
+* Fixed issue with showing posts without featured images, when showing post excerpts in the portfolio view is disabled.
+* Fixed issue with non-clickable portfolio items when excerpts are disabled
+
 ### 1.4.0 - April 16, 2015
 
 * Added option to hide tags in the portfolio view
