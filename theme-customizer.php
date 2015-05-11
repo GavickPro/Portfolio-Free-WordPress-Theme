@@ -120,6 +120,16 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+		'posts_per_page',
+		array(
+			'default' => '10',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'portfolio_intval',
+			'type' => 'option'
+		)
+	);
+	
+	$wp_customize->add_setting(
 		'portfolio_article_column',
 		array( 
 			'default'   => '4',
@@ -466,6 +476,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	        'type'     => 'text',
 	        'active_callback' => 'portfolio_body_font_url_field'
     	)
+	);
+	
+	$wp_customize->add_control(
+	    'posts_per_page',
+	    array(
+	        'section'  => 'portfolio_layout_options',
+	        'label'    => __('Posts per page', 'portfolio'),
+	        'type'     => 'text'
+		)
 	);
 	
 	$wp_customize->add_control(
