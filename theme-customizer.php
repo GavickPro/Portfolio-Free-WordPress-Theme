@@ -283,11 +283,21 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+	    'portfolio_special_img_size',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+
+	$wp_customize->add_setting(
 	    'portfolio_img_w',
 	    array(
 	        'default'   => '300',
 	        'capability' => 'edit_theme_options',
-	        'sanitize_callback' => 'portfolio_intval'
+	        'sanitize_callback' => 'portfolio_intval',
+	        'transport' => 'postMessage'
 	    )
 	);
 
@@ -296,7 +306,18 @@ function portfolio_init_customizer( $wp_customize ) {
 	    array(
 	        'default'   => '400',
 	        'capability' => 'edit_theme_options',
-	        'sanitize_callback' => 'portfolio_intval'
+	        'sanitize_callback' => 'portfolio_intval',
+	        'transport' => 'postMessage'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_img_hard_crop',
+	    array(
+	        'default'   => '1',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval',
+	        'transport' => 'postMessage'
 	    )
 	);
 	
@@ -658,13 +679,23 @@ function portfolio_init_customizer( $wp_customize ) {
             'type'     => 'checkbox'
         )
     );
+    
+    $wp_customize->add_control(
+        'portfolio_special_img_size',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Use dedicated portfolio image size', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
 
     $wp_customize->add_control(
         'portfolio_img_w',
         array(
             'section'  => 'portfolio_advanced',
             'label'    => __('Portfolio image width (px)', 'portfolio'),
-            'type'     => 'text'
+            'type'     => 'text',
+            'active_callback' => 'portfolio_img_size_active'
         )
     );
 
@@ -673,7 +704,18 @@ function portfolio_init_customizer( $wp_customize ) {
         array(
             'section'  => 'portfolio_advanced',
             'label'    => __('Portfolio image height (px)', 'portfolio'),
-            'type'     => 'text'
+            'type'     => 'text',
+            'active_callback' => 'portfolio_img_size_active'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_img_hard_crop',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Use hard crop mode', 'portfolio'),
+            'type'     => 'checkbox',
+            'active_callback' => 'portfolio_img_size_active'
         )
     );
     

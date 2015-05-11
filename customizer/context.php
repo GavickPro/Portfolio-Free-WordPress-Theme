@@ -28,4 +28,9 @@ function portfolio_active_animations($control) {
 	return $option->value() != '';
 }
 
+function portfolio_img_size_active($control) {
+	$option = $control->manager->get_setting('portfolio_special_img_size');
+	return $option->value() == '1';
+}
+
 // EOF

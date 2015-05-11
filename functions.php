@@ -420,26 +420,28 @@ if(!function_exists('portfolio_social_button')) {
 add_filter('the_content', 'portfolio_social_button');
 
 
-if(!function_exists('portfolio_image_sizes')) {
-	/**
-	 * Add dedicated portfolio image size
-	 *
-	 * @since Portfolio 1.3
-	 *
-	 * @param array $size dimensions of the image.
-	 * @return array Array of the modified image dimensions
-	 */
-	function portfolio_image_sizes($sizes) {
-		$addsizes = array(
-			"gk-portfolio-size" => __( "Portfolio image", "portfolio")
-		);
-		$newsizes = array_merge($sizes, $addsizes);
-		return $newsizes;
+if(get_theme_mod('portfolio_special_img_size', '0') == '1') {
+	if(!function_exists('portfolio_image_sizes')) {
+		/**
+		 * Add dedicated portfolio image size
+		 *
+		 * @since Portfolio 1.3
+		 *
+		 * @param array $size dimensions of the image.
+		 * @return array Array of the modified image dimensions
+		 */
+		function portfolio_image_sizes($sizes) {
+			$addsizes = array(
+				"gk-portfolio-size" => __( "Portfolio image", "portfolio")
+			);
+			$newsizes = array_merge($sizes, $addsizes);
+			return $newsizes;
+		}
 	}
+	
+	add_image_size('gk-portfolio-size', get_theme_mod('portfolio_img_w', 300), get_theme_mod('portfolio_img_h', 400), get_theme_mod('portfolio_img_hard_crop', '1') == '1');
+	add_filter('image_size_names_choose', 'portfolio_image_sizes');
 }
-
-add_image_size('gk-portfolio-size', get_theme_mod('portfolio_img_w', 300), get_theme_mod('portfolio_img_h', 400), true);
-add_filter('image_size_names_choose', 'portfolio_image_sizes');
 
 if (!function_exists('_wp_render_title_tag')) {
     /**
