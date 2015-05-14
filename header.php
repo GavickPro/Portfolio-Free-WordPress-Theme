@@ -26,7 +26,7 @@
 					<img src="<?php echo get_theme_mod('portfolio_logo', ''); ?>" alt="<?php bloginfo( 'name' ); ?>" />
 				<?php else: ?>
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-					<?php if(get_bloginfo('description') != '') : ?>
+					<?php if(get_bloginfo('description') != '' || is_preview()) : ?>
 					<h2 class="site-description"><?php bloginfo('description'); ?></h2>
 					<?php endif; ?>
 				<?php endif; ?>

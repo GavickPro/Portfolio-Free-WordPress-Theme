@@ -10,6 +10,8 @@ require get_template_directory() . '/customizer/front-end-js.php';
 function portfolio_init_customizer( $wp_customize ) {		
 	// Modify existing controls and settings
 	$wp_customize->get_setting('background_color')->transport = 'postMessage';
+	$wp_customize->get_setting('blogname')->transport = 'postMessage';
+	$wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 	
 	// Add new settings sections
     $wp_customize->add_section(

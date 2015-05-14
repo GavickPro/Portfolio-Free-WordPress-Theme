@@ -25,4 +25,16 @@
 	    	$(document).find('head').append($('<style id="portfolio-new-css-2">' + new_css + '</style>'));
 	    });
 	});
+	
+	wp.customize('blogname', function(value) {
+		value.bind( function( to ) {
+			$('.site-title').text(to);
+		});
+	});
+	
+	wp.customize('blogdescription', function(value) {
+		value.bind( function( to ) {
+			$('.site-description').text(to);
+		});
+	});
 })(jQuery);
