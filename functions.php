@@ -35,7 +35,7 @@ add_filter( 'excerpt_more', 'portfolio_excerpt_more', 999 );
 
 if(!function_exists('portfolio_custom_excerpt_length')) {
 	function portfolio_custom_excerpt_length( $length ) {
-		return 16;
+		return get_theme_mod('portfolio_excerpt_length', 16);
 	}
 }
 

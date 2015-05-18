@@ -360,6 +360,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_excerpt_length',
+	    array(
+	        'default'   => '16',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 	    'portfolio_item_hover',
 	    array(
 	        'default'   => '',
@@ -804,6 +813,15 @@ function portfolio_init_customizer( $wp_customize ) {
         array(
             'section'  => 'portfolio_advanced',
             'label'    => __('Portfolio block padding on mobile', 'portfolio'),
+            'type'     => 'text'
+        )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_excerpt_length',
+        array(
+            'section'  => 'portfolio_advanced',
+            'label'    => __('Excerpt length', 'portfolio'),
             'type'     => 'text'
         )
     );
