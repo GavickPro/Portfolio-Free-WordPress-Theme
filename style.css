@@ -746,11 +746,11 @@ div.nav-menu > ul {
 	-ms-transform-origin: 50% 0;
 	-o-transform-origin: 50% 0;
 	transform-origin: 50% 0;
-	-webkit-transition: all .3s ease-out;
-	-moz-transition: all .3s ease-out;
-	-ms-transition: all .3s ease-out;
-	-o-transition: all .3s ease-out;
-	transition: all .3s ease-out;
+	-webkit-transition: transform .3s ease-out, opacity .3s ease-out;
+	-moz-transition: transform .3s ease-out, opacity .3s ease-out;
+	-ms-transition: transform .3s ease-out, opacity .3s ease-out;
+	-o-transition: transform .3s ease-out, opacity .3s ease-out;
+	transition: transform .3s ease-out, opacity .3s ease-out;
 	width: 200px;
 	z-index: 99999;
 }
@@ -786,8 +786,10 @@ ul.nav-menu ul a,
 	width: 170px;
 }
 
-ul.nav-menu li:hover > ul,
-.nav-menu ul li:hover > ul {
+.no-touch-screen ul.nav-menu li:hover > ul,
+.no-touch-screen .nav-menu ul li:hover > ul,
+.touch-screen ul.nav-menu li.opened > ul,
+.touch-screen .nav-menu ul li.opened > ul {
 	left: auto;
 	opacity: 1;
 	-webkit-transform: translateY(0px) scale(1);
