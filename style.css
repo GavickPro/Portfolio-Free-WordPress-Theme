@@ -621,7 +621,7 @@ img.wp-smiley,
 .site-header {
 	background: #fff;
 	color: #000;
-	height: 64px;
+	min-height: 64px;
 	text-align: center;
 }
 
