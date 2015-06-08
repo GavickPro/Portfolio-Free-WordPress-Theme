@@ -654,6 +654,7 @@ img.wp-smiley,
 	font-family: Arial, sans-serif;
 	font-weight: 300;
 	margin: -23px 0 0 0;
+	min-height: 19px;
 	opacity: 1;
 	text-transform: uppercase;
 }
