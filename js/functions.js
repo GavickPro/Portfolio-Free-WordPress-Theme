@@ -155,11 +155,13 @@ function portfolio_is_touch_device() {
 		});	
 		
 		// Fix for the mobile devices
-		$('.menu-item-has-children').children('a').each(function(i, link) {
-			$(link).click(function(e) {
-				e.preventDefault();
+	        if($(document.body).hasClass('touch-screen')) {
+			$('.menu-item-has-children').children('a').each(function(i, link) {
+				$(link).click(function(e) {
+					e.preventDefault();
+				});
 			});
-		});
+	        }
 		
 		$('.menu-item-has-children').on('touchend', function(e) {
 			e.stopPropagation();
