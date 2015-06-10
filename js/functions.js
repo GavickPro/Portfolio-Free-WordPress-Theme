@@ -155,31 +155,31 @@ function portfolio_is_touch_device() {
 		});	
 		
 		// Fix for the mobile devices
-	        if($(document.body).hasClass('touch-screen')) {
+		if($(document.body).hasClass('touch-screen')) {
 			$('.menu-item-has-children').children('a').each(function(i, link) {
 				$(link).click(function(e) {
 					e.preventDefault();
 				});
 			});
-	        }
+		}
 		
-		$('.menu-item-has-children').on('touchend', function(e) {
+		$('.menu-item-has-children').children('a').on('touchend', function(e) {
 			e.stopPropagation();
 			e.preventDefault();
 			
 			if(!$(this).attr('data-time')) {
-				$(this).addClass('opened');
+				$(this).parent().addClass('opened');
 				$(this).attr('data-time', new Date().getTime());
 				return true;
 			}
 			
 			if($(this).attr('data-time') && (parseInt($(this).attr('data-time'), 10) + 500.0) > new Date().getTime()) {
-				window.location.href = $(this).find('a').first().attr('href');
+				window.location.href = $(this).attr('href');
 				return true;
 			}
 			
 			if($(this).attr('data-time') && (parseInt($(this).attr('data-time'), 10) + 500.0) < new Date().getTime()) {
-				$(this).removeClass('opened');
+				$(this).parent().removeClass('opened');
 				$(this).removeAttr('data-time');
 				return true;
 			}
