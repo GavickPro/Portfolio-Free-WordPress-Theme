@@ -2364,6 +2364,10 @@ footer.entry-meta > .edit-link {
 	word-wrap: break-word;
 }
 
+article .widget {
+	background-color: transparent!important;
+}
+
 .widget .widget-title {
 	margin: 0 0 16px 0;
 }
