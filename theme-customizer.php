@@ -5,6 +5,7 @@ require get_template_directory() . '/customizer/sanitization.php';
 require get_template_directory() . '/customizer/context.php';
 require get_template_directory() . '/customizer/front-end-css.php';
 require get_template_directory() . '/customizer/front-end-js.php';
+require get_template_directory() . '/customizer/custom-controls/category-selection/category-selection.php';
 	
 /* Add additional options to Theme Customizer */
 function portfolio_init_customizer( $wp_customize ) {		
@@ -410,6 +411,24 @@ function portfolio_init_customizer( $wp_customize ) {
 	        'default'   => '0',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_filter_categories',
+	    array(
+	        'default'   => '',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+		'portfolio_filtered_categories', 
+		array(
+	   		'default' => '',
+	   		'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_validate_category_selection'
 	    )
 	);
 	
@@ -825,6 +844,25 @@ function portfolio_init_customizer( $wp_customize ) {
             'type'     => 'text'
         )
     );
+    
+    $wp_customize->add_control(
+        'portfolio_filter_categories',
+        array(
+            'section'  => 'static_front_page',
+            'label'    => __('Filter categories', 'portfolio'),
+            'type'     => 'checkbox'
+        )
+    );
+    
+    $wp_customize->add_control(new GK_Portfolio_Category_Selection(
+        $wp_customize,
+        'portfolio_filtered_categories',
+        array(
+       		'label' => __('Select categories', 'portfolio'),
+            'section' => 'static_front_page',
+            'active_callback' => 'portfolio_filter_categories'
+        )
+    ));
 }
 
 add_action( 'customize_register', 'portfolio_init_customizer' );

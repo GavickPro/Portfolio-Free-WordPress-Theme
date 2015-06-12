@@ -18,6 +18,11 @@ function portfolio_body_font_url_field($control) {
 	return $option->value() == 'google';
 }
 
+function portfolio_filter_categories($control) {
+	$option = $control->manager->get_setting('portfolio_filter_categories');
+	return $option->value() != '';
+}
+
 function portfolio_logo_config($control) {
 	$option = $control->manager->get_setting('portfolio_logo');
 	return $option->value() != '';

@@ -50,4 +50,15 @@ function portfolio_sanitize_checkbox($value) {
 	return null;
 }
 
+function portfolio_validate_category_selection($input) {
+    $temp = explode(',', $input);
+ 
+    if(count($temp) === count(array_filter($temp, 'is_numeric'))) {
+        return $input;
+    }
+ 
+    return null;
+}
+
+
 // EOF

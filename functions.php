@@ -456,3 +456,17 @@ if (!function_exists('_wp_render_title_tag')) {
 	}
     add_action( 'wp_head', 'theme_slug_render_title' );
 }
+
+if (!function_exists('portfolio_filter_for_categories')) {
+	function portfolio_filter_for_categories($query) {
+	    if (
+	    	get_theme_mod('portfolio_filter_categories', '') != '' &&
+	    	$query->is_main_query() && 
+	    	is_home()
+	    ) {
+	        $query->set('cat', get_theme_mod('portfolio_filtered_categories', ''));
+	    }
+	}
+	
+	add_action('pre_get_posts', 'portfolio_filter_for_categories');
+}

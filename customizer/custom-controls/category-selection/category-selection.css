@@ -1,0 +1,17 @@
+.gk-portfolio-fake-checkbox {
+    display: none;
+}
+.gk-portfolio-category-selection {
+    min-height: 42px;
+    max-height: 200px;
+    overflow: auto;
+    padding: .9em;
+    border: 1px solid #dfdfdf;
+    background-color: #fdfdfd;
+}
+.gk-portfolio-category-selection .children {
+    padding: 5px 0;
+}
+.gk-portfolio-category-selection .children li {
+    padding-left: 20px;
+}
