@@ -29,6 +29,7 @@ Tags: green, gray, white, one-column, fluid-layout, responsive-layout, custom-ba
 	3.12 404 Page
 	3.13 Comments
 	3.14 Post navigation
+	3.15 v.1.5.0 addons
 4. Widgets
 5. Footer
 6. RWD
@@ -2414,6 +2415,75 @@ footer.entry-meta > .edit-link {
 }
 
 /**
+ * 3.15. v.1.5.0 addons
+ * ----------------------------------------------------------------------------
+ */
+
+.search-topbar {
+	float: left;
+	left: 10px;
+	position: absolute;
+	top: 12px;
+}
+
+.admin-bar .search-topbar {
+	top: 44px;
+}
+
+.search-topbar:after {
+	color: #aaa;
+	content: "\f002";
+	font-family: FontAwesome;
+	position: absolute;
+	right: 15px;
+	top: 8px;
+	z-index: 1;
+}
+
+.search-topbar-field {
+	border-radius: 20px;
+	text-indent: 5px;
+}
+
+.social-menu-topbar {
+	float: right;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 12px;
+	top: 22px;
+}
+
+.social-menu-topbar li,
+.social-menu-topbar li > a {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	display: inline-block;
+	height: 32px;
+	margin: 0 1px;
+	opacity: 0.7;
+	overflow: hidden;
+	width: 22px;
+}
+
+.social-menu-topbar li:before {
+	color: #ccc;
+	font-family: FontAwesome;
+	font-size: 22px;
+	line-height: 24px;
+}
+
+.social-menu-topbar li > a {
+	display: block;
+	margin: 0;
+	position: relative;
+	text-indent: -9999px;
+	top: -32px;
+}
+
+/**
  * 4. Widgets
  * ----------------------------------------------------------------------------
  */
@@ -3098,5 +3168,19 @@ select {
 @media (min-width: 721px) {
 	.menu-main-menu-container {
 		height: auto!important;
+	}
+}
+
+/* Top bar search and social icons RWD */
+@media (max-width: 782px) {
+	.admin-bar .search-topbar {
+		top: 58px;
+	}
+}
+
+@media (max-width: 600px) {
+	.search-topbar,
+	.social-menu-topbar {
+		display: none;
 	}
 }

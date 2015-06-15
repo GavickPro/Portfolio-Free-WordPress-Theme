@@ -446,6 +446,24 @@ function portfolio_init_customizer( $wp_customize ) {
 	    )
 	);
 	
+	$wp_customize->add_setting(
+	    'portfolio_show_topbar_search',
+	    array(
+	        'default'   => '',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
+	$wp_customize->add_setting(
+	    'portfolio_show_topbar_social',
+	    array(
+	        'default'   => '',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_intval'
+	    )
+	);
+	
 	// Add control for the settings
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control( 
@@ -642,7 +660,24 @@ function portfolio_init_customizer( $wp_customize ) {
 	    )
 	);
 	
-    
+	$wp_customize->add_control(
+	    'portfolio_show_topbar_search',
+	    array(
+	        'section'  => 'portfolio_layout_options',
+	        'label'    => __('Show search at top bar', 'portfolio'),
+	        'type'     => 'checkbox'
+	    )
+	);
+	
+	$wp_customize->add_control(
+	    'portfolio_show_topbar_social',
+	    array(
+	        'section'  => 'portfolio_layout_options',
+	        'label'    => __('Show social icons at top bar', 'portfolio'),
+	        'type'     => 'checkbox'
+	    )
+	);
+	
     $wp_customize->add_control(
         'portfolio_post_show_featured_image',
         array(
