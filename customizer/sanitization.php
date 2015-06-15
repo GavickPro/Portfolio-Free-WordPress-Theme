@@ -50,4 +50,32 @@ function portfolio_sanitize_checkbox($value) {
 	return null;
 }
 
+function portfolio_validate_category_selection($value) {
+    $temp = explode(',', $value);
+ 
+    if(count($temp) === count(array_filter($temp, 'is_numeric'))) {
+        return $value;
+    }
+ 
+    return null;
+}
+
+function portfolio_post_preview_animation_type($value) {
+	$types = array(
+		'animation-slide-up',
+		'animation-slide-down',
+		'animation-slide-left',
+		'animation-slide-right',
+		'animation-opacity',
+		'animation-scale'
+	);
+	
+	if(in_array($value, $types)) {
+		return $value;
+	}
+	
+	return null;
+}
+
+
 // EOF

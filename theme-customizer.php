@@ -402,6 +402,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_post_preview_animation',
+	    array(
+	        'default'   => 'animation-slide-up',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_post_preview_animation_type'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 	    'portfolio_show_post_navigation',
 	    array(
 	        'default'   => '1',
@@ -802,6 +811,23 @@ function portfolio_init_customizer( $wp_customize ) {
             	'750' => __('Slow animation', 'portfolio'),
             ),
             'active_callback' => 'portfolio_active_animations'
+       	 )
+    );
+    
+    $wp_customize->add_control(
+        'portfolio_post_preview_animation',
+        array(
+            'section'  => 'portfolio_effects_options',
+            'label'    => __('Post preview animation type', 'portfolio'),
+            'type'     => 'select',
+            'choices'  => array(
+            	'animation-slide-up' => __('Slide up', 'portfolio'),
+            	'animation-slide-down' => __('Slide down', 'portfolio'),
+            	'animation-slide-left' => __('Slide left', 'portfolio'),
+            	'animation-slide-right' => __('Slide right', 'portfolio'),
+            	'animation-opacity' => __('Opacity', 'portfolio'),
+            	'animation-scale' => __('Scale', 'portfolio')
+            )
        	 )
     );
     
