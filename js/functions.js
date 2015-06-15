@@ -56,6 +56,14 @@ function portfolio_is_touch_device() {
 						window.location.href = preview.attr('data-url');
 					});
 				}
+			} else {
+				var preview = block.find('.entry-header');
+				
+				if(preview.attr('data-url')) {
+					block.click(function() {
+						window.location.href = preview.attr('data-url');
+					});
+				}
 			}
 		});
 		
