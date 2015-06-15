@@ -1516,6 +1516,12 @@ footer.entry-meta > .edit-link {
 .image-navigation .nav-next {
 	float: right;
 }
+.image-navigation .nav-parent {
+	clear: both;
+	display: block;
+	margin: 20px 0 0 0;
+	text-align: center;
+}
 
 .image-navigation .meta-nav {
 	font-size: 20px;

@@ -10,6 +10,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 				<div>
+					
 					<?php get_template_part( 'content', 'header'); ?>
 	
 					<div class="entry-content">
@@ -33,10 +34,13 @@ get_header(); ?>
 						<?php endif; ?>
 						
 						<nav id="image-navigation" class="navigation image-navigation" role="navigation">
-							<span class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'portfolio' ) ); ?></span>
-							<span class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'portfolio' ) ); ?></span>
+							<span class="nav-previous"><?php echo previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous Image', 'portfolio' ) ); ?></span>
+							<span class="nav-next"><?php echo next_image_link( false, __( 'Next Image <span class="meta-nav">&rarr;</span>', 'portfolio' ) ); ?></span>
+							<span class="nav-parent">
+								<?php $permalink = get_permalink($post->post_parent); ?>
+								<a href="<?php echo $permalink; ?>"><?php _e('&uarr; Return to post', 'portfolio'); ?></a>
+							</span>
 						</nav><!-- #image-navigation -->
-
 					<?php get_template_part( 'content', 'footer' ); ?>
 				</div>
 			</article><!-- #post -->
