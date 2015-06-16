@@ -77,5 +77,20 @@ function portfolio_post_preview_animation_type($value) {
 	return null;
 }
 
+function portfolio_meta_types($value) {
+	$types = array(
+		'tags',
+		'categories',
+		'date',
+		'title'
+	);
+	
+	if(in_array($value, $types)) {
+		return $value;
+	}
+	
+	return null;
+}
+
 
 // EOF

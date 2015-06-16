@@ -438,6 +438,15 @@ function portfolio_init_customizer( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+	    'portfolio_meta_type',
+	    array(
+	        'default'   => 'tags',
+	        'capability' => 'edit_theme_options',
+	        'sanitize_callback' => 'portfolio_meta_types'
+	    )
+	);
+	
+	$wp_customize->add_setting(
 		'portfolio_filtered_categories', 
 		array(
 	   		'default' => '',
@@ -646,7 +655,7 @@ function portfolio_init_customizer( $wp_customize ) {
 	    'portfolio_show_tags',
 	    array(
 	        'section'  => 'portfolio_layout_options',
-	        'label'    => __('Show tags on portfolio', 'portfolio'),
+	        'label'    => __('Show post information on portfolio', 'portfolio'),
 	        'type'     => 'checkbox'
 	    )
 	);
@@ -929,6 +938,21 @@ function portfolio_init_customizer( $wp_customize ) {
             'active_callback' => 'portfolio_filter_categories'
         )
     ));
+    
+    $wp_customize->add_control(
+        'portfolio_meta_type',
+        array(
+            'section'  => 'static_front_page',
+            'label'    => __('Post information under image', 'portfolio'),
+            'type'     => 'select',
+            'choices'  => array(
+            	'tags' => __('Post tags', 'portfolio'),
+            	'categories' => __('Post categories', 'portfolio'),
+            	'date' => __('Post date', 'portfolio'),
+            	'title' => __('Post title', 'portfolio')
+            )
+       	 )
+    );
 }
 
 add_action( 'customize_register', 'portfolio_init_customizer' );
