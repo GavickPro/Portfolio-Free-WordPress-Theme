@@ -63,6 +63,26 @@ Full list of used images:
 
 ## Changelog
 
+### 1.5.0 - June 17, 2015
+
+* Added filtering of the post categories on the frontpage
+* Added option to select post information type on the portfolio view (tags, categories, title, date)
+* Added choice for post preview animations on hover
+* Added option to display search at topbar
+* Added option to display social icons at topbar
+* Added option to specify number of posts per page
+* Added option for enabling hard crop mode and using the special portfolio image dimensions
+* Added option to specify the excerpt length
+* Improved navigation in the image attachment page
+* Added AJAX refresh for blogname/blogdescription in the theme customizer
+* Moved customizer JS code to a separate JS file
+* Fixed issue with background color of widgets placed in the article content
+* Fixed issue with the theme description on the small screens
+* Fixed menu behaviour on tablets
+* Fixed submenu behaviour on mobile devices
+* Fixed issue with non-clickable parent menu items
+* Fixed issue with low header block in some configurations
+
 ### 1.4.1 - April 29, 2015
 
 * Added option to specify the portfolio view width
