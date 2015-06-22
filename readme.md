@@ -63,6 +63,11 @@ Full list of used images:
 
 ## Changelog
 
+### 1.5.1 - June 22, 2015
+
+* Fixed issues with excerpt animations on the portfolio view
+* Fixed small issues with translation domains
+
 ### 1.5.0 - June 17, 2015
 
 * Added filtering of the post categories on the frontpage

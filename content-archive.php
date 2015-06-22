@@ -40,7 +40,7 @@ $post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'sli
 	<div class="article-helper notloaded<?php echo $post_helper_css_classes; ?>">
 		<?php if (is_home() || is_search() || is_archive() || is_tag()) : // Only display Excerpts for Search ?>
 			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1' || !has_post_thumbnail()) : ?>
-			<div class="post-preview transition animation-<?php echo $post_preview_animation; ?>"<?php if(get_theme_mod('portfolio_whole_overlay_clickable', '1') == '1') : ?> data-url="<?php echo get_permalink(); ?>"<?php endif; ?>>
+			<div class="post-preview transition animation <?php echo $post_preview_animation; ?>"<?php if(get_theme_mod('portfolio_whole_overlay_clickable', '1') == '1') : ?> data-url="<?php echo get_permalink(); ?>"<?php endif; ?>>
 				<?php get_template_part('content', 'header'); ?>
 			
 				<div class="entry-summary">
