@@ -780,6 +780,11 @@ div.nav-menu > ul {
 	z-index: 99999;
 }
 
+.nav-menu .sub-menu .sub-menu,
+.nav-menu .children .children {
+	margin-left: 150px;
+}
+
 .nav-menu .sub-menu ul,
 .nav-menu .children ul {
 	border-left: 0;
