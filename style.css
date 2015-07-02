@@ -2772,6 +2772,13 @@ select {
 .icon-pinterest:before { content: "\f0d3"; }
 .icon-youtube:before { content: "\f166"; }
 .icon-rss:before { content: "\f143"; }
+.icon-instagram:before { content: "\f16d"; }
+.icon-behance:before { content: "\f1b4"; }
+.icon-dribbble:before { content: "\f17d"; }
+.icon-flickr:before { content: "\f16e"; }
+.icon-github:before { content: "\f092"; }
+.icon-vimeo:before { content: "\f194"; }
+.icon-linkedin:before { content: "\f08c"; }
 
 .social-menu li > a {
 	display: block;
