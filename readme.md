@@ -63,6 +63,12 @@ Full list of used images:
 
 ## Changelog
 
+### 1.5.2 - July 5, 2015
+
+* Added new social icons CSS classes: instagram, behance, dribbble, flickr, github, vimeo, linkedin
+* Fixed issue with non-visible portfolio thumbnails
+* Fixed issues with sub-sub-menus
+
 ### 1.5.1 - June 22, 2015
 
 * Fixed issues with excerpt animations on the portfolio view
