@@ -212,11 +212,11 @@ if(!function_exists('portfolio_styles')) {
 		$google_font_url = get_theme_mod('portfolio_google_font', 'Open+Sans:700');
 		$google_body_font_url = get_theme_mod('portfolio_body_google_font', 'Open+Sans:400');
 		
-		if(stripos($google_font_url, 'fonts.googleapis.com')) {
+		if(stripos($google_font_url, 'fonts.googleapis.com') === FALSE) {
 			$google_font_url = 'https://fonts.googleapis.com/css?family=' . $google_font_url;
 		}
 		
-		if(stripos($google_body_font_url, 'fonts.googleapis.com')) {
+		if(stripos($google_body_font_url, 'fonts.googleapis.com') === FALSE) {
 			$google_body_font_url = 'https://fonts.googleapis.com/css?family=' . $google_body_font_url;
 		}
 		
