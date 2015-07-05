@@ -5,11 +5,11 @@ function portfolio_customizer_css() {
 	$google = esc_attr(get_theme_mod('portfolio_google_font', 'Open+Sans:700'));
 	$body_google = esc_attr(get_theme_mod('portfolio_body_google_font', 'Open+Sans:400'));
 	
-	if(stripos($google, 'googleapis') === -1) {
+	if(stripos($google, 'googleapis') === FALSE) {
 		$google = 'http://fonts.googleapis.com/css?family=' . $google;
 	}
 	
-	if(stripos($body_google, 'googleapis') === -1) {
+	if(stripos($body_google, 'googleapis') === FALSE) {
 		$body_google = 'http://fonts.googleapis.com/css?family=' . $body_google;
 	}
 	
