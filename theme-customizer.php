@@ -103,7 +103,7 @@ function portfolio_init_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'portfolio_google_font',
 	    array(
-	        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:700',
+	        'default'   => 'Open+Sans:700',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'esc_url_raw'
 	    )
@@ -121,7 +121,7 @@ function portfolio_init_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	    'portfolio_body_google_font',
 	    array(
-	        'default'   => 'http://fonts.googleapis.com/css?family=Open+Sans:400',
+	        'default'   => 'Open+Sans:400',
 	        'capability' => 'edit_theme_options',
 	        'sanitize_callback' => 'esc_url_raw'
 	    )
