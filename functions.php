@@ -209,10 +209,21 @@ if(!function_exists('portfolio_styles')) {
 		wp_enqueue_style('portfolio-normalize', get_template_directory_uri() . '/css/normalize.css', false);
 	
 		// Add Google font from the customizer
-		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'), false);
+		$google_font_url = get_theme_mod('portfolio_google_font', 'Open+Sans:700');
+		$google_body_font_url = get_theme_mod('portfolio_body_google_font', 'Open+Sans:400');
 		
-		if(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700') != get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400')) {
-			wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400'), false);
+		if(stripos($google_font_url, 'fonts.googleapis.com')) {
+			$google_font_url = 'https://fonts.googleapis.com/css?family=' . $google_font_url;
+		}
+		
+		if(stripos($google_body_font_url, 'fonts.googleapis.com')) {
+			$google_body_font_url = 'https://fonts.googleapis.com/css?family=' . $google_body_font_url;
+		}
+		
+		wp_enqueue_style('portfolio-fonts', $google_font_url, false);
+		
+		if($google_body_font_url != $google_font_url) {
+			wp_enqueue_style('portfolio-fonts-body', $google_body_font_url, false);
 		}
 		
 		// Font Awesome
