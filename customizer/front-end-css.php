@@ -2,21 +2,12 @@
 
 // Add CSS styles generated from GK Cusotmizer settings
 function portfolio_customizer_css() {
-	$google = esc_attr(get_theme_mod('portfolio_google_font', 'Open+Sans:700'));
-	$body_google = esc_attr(get_theme_mod('portfolio_body_google_font', 'Open+Sans:400'));
-	
-	if(stripos($google, 'googleapis') === FALSE) {
-		$google = 'http://fonts.googleapis.com/css?family=' . $google;
-	}
-	
-	if(stripos($body_google, 'googleapis') === FALSE) {
-		$body_google = 'http://fonts.googleapis.com/css?family=' . $body_google;
-	}
-	
+	$google = esc_attr(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'));
 	$fname = array();
 	preg_match('@family=(.+)$@is', $google, $fname);
 	$font_family = "'" . str_replace('+', ' ', preg_replace('@:.+@', '', preg_replace('@&.+@', '', $fname[1]))) . "'";
 	
+	$body_google = esc_attr(get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400'));
 	$body_fname = array();
 	preg_match('@family=(.+)$@is', $body_google, $body_fname);
 	$body_font_family = "'" . str_replace('+', ' ', preg_replace('@:.+@', '', preg_replace('@&.+@', '', $body_fname[1]))) . "'";
