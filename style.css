@@ -46,7 +46,7 @@ Tags: green, gray, white, one-column, fluid-layout, responsive-layout, custom-ba
 }
 html {
 	font-size: 62.5%;
-	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 body {
 	background: #fff;
