@@ -2999,6 +2999,7 @@ select {
 		-moz-box-shadow: none;
 		box-shadow: none;
 		left: auto;
+		margin-left: 0!important;
 		opacity: 1;
 		position: static;
 		-webkit-transform: translateY(0px) scale(1);
