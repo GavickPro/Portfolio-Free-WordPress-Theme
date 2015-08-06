@@ -48,8 +48,7 @@ function portfolio_init_customizer( $wp_customize ) {
     	'portfolio_post_options',
 	    array(
 	        'title'     => __('Post display', 'portfolio'),
-	        'priority'  => 400,
-	        'active_callback' => 'portfolio_is_singular'
+	        'priority'  => 400
     	)
     );
 
