@@ -143,6 +143,11 @@ function portfolio_is_touch_device() {
 		var main_menu_container = main_menu.find('.menu-main-menu-container').first();
 		var submenu = jQuery('#menu-main-menu');
 		
+		if(!submenu.length) {
+			main_menu_container = jQuery(main_menu.find('.nav-menu').first());
+			submenu = jQuery(main_menu_container.find('ul').first());
+		}
+		
 		main_menu.click(function() {
 			if(jQuery(window).outerWidth() <= 720) {
 				if(main_menu.hasClass("opened")) {
