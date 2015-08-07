@@ -24,8 +24,10 @@
 		<div class="entry-content">
 			<?php if($video_code != '') : ?>
 				<?php echo str_replace($video_code, '', apply_filters('the_content', get_the_content( __( 'Read more', 'portfolio' ) ))); ?>
+				<?php echo portfolio_social_button(); ?>
 			<?php else : ?>
 				<?php the_content(__('Read more', 'portfolio')); ?>
+				<?php echo portfolio_social_button(); ?>
 			<?php endif; ?>	
 			
 			<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'portfolio') . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>

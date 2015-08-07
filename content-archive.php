@@ -32,7 +32,7 @@ $post_helper_css_classes .= get_theme_mod('portfolio_frontpage_animation_type', 
 $post_helper_css_classes .= get_theme_mod('portfolio_frontpage_animation_speed', '500') !== ''  ? $animation_speed : '';
 $post_helper_css_classes .= (get_theme_mod('portfolio_show_excerpts', '1') == '0' && is_sticky()) ? ' sticky' : '';
 
-$post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'animation-slide-up');
+$post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'slide-up');
 
 ?>
 
@@ -91,6 +91,8 @@ $post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'ani
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content(__('Read more', 'portfolio')); ?>
+			<?php echo portfolio_social_button(); ?>
+			
 			<?php wp_link_pages(array('before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'portfolio') . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>')); ?>
 			
 			<?php

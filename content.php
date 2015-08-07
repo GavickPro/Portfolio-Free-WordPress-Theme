@@ -20,7 +20,10 @@
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content(__('Read more', 'portfolio')); ?>
+			<?php echo portfolio_social_button(); ?>
+			
 			<?php wp_link_pages(array('before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'portfolio') . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>')); ?>
+			
 			<?php
 				if(get_theme_mod('portfolio_post_show_tags', '1') == '1') {
 					$tag_list = get_the_tag_list('<ul class="tags-links"><li>',', </li><li>','</li></ul>');

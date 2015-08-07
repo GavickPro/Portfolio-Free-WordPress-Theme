@@ -388,14 +388,15 @@ if(!function_exists('portfolio_social_button')) {
 	 * @param string $content Post content.
 	 * @return string Post content with HTML output.
 	 */
-	function portfolio_social_button($content) {
+	function portfolio_social_button() {
 		global $post;
 		// get posts titles and permalinks
 		$permalink = get_permalink($post->ID);
 		$title = get_the_title();
+		$content = '';
 		// add share button only on posts pages
 		if(!is_feed() && !is_home() && !is_page() && get_theme_mod('portfolio_post_show_social', '1') == '1') {
-			$content = $content . '<div class="gk-social-buttons">
+			$content = '<div class="gk-social-buttons">
 			<span class="gk-social-label">'.__( 'Share:', 'portfolio' ).'</span>
 			<a class="gk-social-twitter" href="http://twitter.com/share?text='.urlencode($title).'&amp;url='.urlencode($permalink).'"
 	            onclick="window.open(this.href, \'twitter-share\', \'width=550,height=235\');return false;">
@@ -417,7 +418,7 @@ if(!function_exists('portfolio_social_button')) {
 	}
 }
 
-add_filter('the_content', 'portfolio_social_button');
+//add_filter('the_content', 'portfolio_social_button');
 
 
 if(get_theme_mod('portfolio_special_img_size', '0') == '1') {
