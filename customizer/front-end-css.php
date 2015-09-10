@@ -28,8 +28,8 @@ function portfolio_customizer_css() {
     
     ?>   
     <style type="text/css">
-    	body { font-family: <?php echo $body_portfolio_font; ?> }
-        .site-title { font-family: <?php echo $portfolio_font; ?> }
+    	body { font-family: <?php echo $body_portfolio_font; ?>, sans-serif; }
+        .site-title { font-family: <?php echo $portfolio_font; ?>, sans-serif; }
     	
     	.site-main #page {
     		max-width: <?php echo get_theme_mod('portfolio_portfolio_width', '1260'); ?>px;
