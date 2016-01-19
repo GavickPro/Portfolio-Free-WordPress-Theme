@@ -209,10 +209,10 @@ if(!function_exists('portfolio_styles')) {
 		wp_enqueue_style('portfolio-normalize', get_template_directory_uri() . '/css/normalize.css', false);
 	
 		// Add Google font from the customizer
-		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700'), false);
+		wp_enqueue_style('portfolio-fonts', get_theme_mod('portfolio_google_font', 'https://fonts.googleapis.com/css?family=Open+Sans:700'), false);
 		
-		if(get_theme_mod('portfolio_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:700') != get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400')) {
-			wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', 'http://fonts.googleapis.com/css?family=Open+Sans:400'), false);
+		if(get_theme_mod('portfolio_google_font', 'https://fonts.googleapis.com/css?family=Open+Sans:700') != get_theme_mod('portfolio_body_google_font', 'https://fonts.googleapis.com/css?family=Open+Sans:400')) {
+			wp_enqueue_style('portfolio-fonts-body', get_theme_mod('portfolio_body_google_font', 'https://fonts.googleapis.com/css?family=Open+Sans:400'), false);
 		}
 		
 		// Font Awesome
@@ -398,7 +398,7 @@ if(!function_exists('portfolio_social_button')) {
 		if(!is_feed() && !is_home() && !is_page() && get_theme_mod('portfolio_post_show_social', '1') == '1') {
 			$content = '<div class="gk-social-buttons">
 			<span class="gk-social-label">'.__( 'Share:', 'portfolio' ).'</span>
-			<a class="gk-social-twitter" href="http://twitter.com/share?text='.urlencode($title).'&amp;url='.urlencode($permalink).'"
+			<a class="gk-social-twitter" href="https://twitter.com/share?text='.urlencode($title).'&amp;url='.urlencode($permalink).'"
 	            onclick="window.open(this.href, \'twitter-share\', \'width=550,height=235\');return false;">
 	            <span class="social__icon--hidden">Twitter</span>
 	        </a>    
