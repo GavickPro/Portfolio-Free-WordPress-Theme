@@ -140,8 +140,8 @@ function portfolio_is_touch_device() {
 		jQuery(".video-wrapper").fitVids();
 	    
 		var main_menu = jQuery(".main-navigation");
-		var main_menu_container = main_menu.find('.menu-main-menu-container').first();
-		var submenu = jQuery('#menu-main-menu');
+		var main_menu_container = main_menu.find('div').first();
+		var submenu = main_menu.find('ul').first();
 		
 		if(!submenu.length) {
 			main_menu_container = jQuery(main_menu.find('.nav-menu').first());
