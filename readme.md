@@ -63,6 +63,21 @@ Full list of used images:
 
 ## Changelog
 
+### 1.5.3 - May 27, 2016
+
+* Added new tags
+* Fixed issue with the content-footer spacing
+* Improved mobile menu behaviour
+* Improved menu scripts for cases when menu position name is different
+* Better HTTPS handling
+* Improved view of the blog items on subpages
+* Temporary fix for IE10-11 and Google Fonts
+* Moved social icons output outside the the_content filter
+* Removed active callback for the post display section  …
+* Fixed issue with mobile menu when there is no main menu set.
+* Fixed issue with sub-sub-menu in the mobile view.
+* Changed font smoothing on webkit to get better icons
+
 ### 1.5.2 - July 5, 2015
 
 * Added new social icons CSS classes: instagram, behance, dribbble, flickr, github, vimeo, linkedin
